@@ -51,19 +51,50 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
           ))}
         </div>
 
-        <a
-          href={project.projectUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-body uppercase tracking-[0.15em]
-            text-white/80 hover:text-white transition-colors duration-200 no-underline group w-fit"
-        >
-          View Project
-          <ArrowUpRight
-            size={16}
-            className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          />
-        </a>
+        {(() => {
+          const label = project.projectLinkLabel ?? 'Visit';
+          const variant =
+            project.projectLinkVariant ?? (project.projectUrl ? 'link' : 'text');
+
+          if (variant === 'link' && project.projectUrl) {
+            return (
+              <a
+                href={project.projectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-body uppercase tracking-[0.15em]
+                  text-white/80 hover:text-white transition-colors duration-200 no-underline group w-fit"
+              >
+                {label}
+                <ArrowUpRight
+                  size={16}
+                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
+            );
+          }
+
+          if (variant === 'unavailable') {
+            return (
+              <span
+                className="inline-flex items-center gap-2 text-sm font-body uppercase tracking-[0.15em]
+                  text-white/30 w-fit"
+              >
+                {label}
+                <ArrowUpRight size={16} className="opacity-60" />
+              </span>
+            );
+          }
+
+          return (
+            <span
+              className="inline-flex items-center text-sm font-body uppercase tracking-[0.15em]
+                text-white/40 w-fit animate-text-glow"
+            >
+              {label}
+            </span>
+          );
+        })()}
       </div>
     </article>
   );

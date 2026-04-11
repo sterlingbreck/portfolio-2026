@@ -1,5 +1,6 @@
 import { Mail } from 'lucide-react';
 
+/*
 function GithubIcon({ size = 20 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -7,6 +8,7 @@ function GithubIcon({ size = 20 }: { size?: number }) {
     </svg>
   );
 }
+*/
 
 function LinkedInIcon({ size = 20 }: { size?: number }) {
   return (
@@ -16,6 +18,7 @@ function LinkedInIcon({ size = 20 }: { size?: number }) {
   );
 }
 
+/*
 function InstagramIcon({ size = 20 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -23,6 +26,7 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
     </svg>
   );
 }
+*/
 
 export default function Footer() {
   return (
@@ -38,7 +42,7 @@ export default function Footer() {
               Let's work together
             </h2>
             <p className="text-white/60 font-body text-sm sm:text-base leading-relaxed">
-              Available for select freelance projects, collaborations, and full-time opportunities.
+              Available for select projects, collaborations, and full-time opportunities.
             </p>
           </div>
 
@@ -49,9 +53,10 @@ export default function Footer() {
                 transition-colors duration-200 font-body text-sm no-underline"
             >
               <Mail size={16} />
-              hello@sterling.design
+              sterlingbreck@gmail.com
             </a>
             <div className="flex gap-4">
+              {/*
               <a
                 href="https://github.com"
                 target="_blank"
@@ -61,6 +66,7 @@ export default function Footer() {
               >
                 <GithubIcon />
               </a>
+              */}
               <a
                 href="https://linkedin.com"
                 target="_blank"
@@ -70,7 +76,7 @@ export default function Footer() {
               >
                 <LinkedInIcon />
               </a>
-              <a
+              {/*<a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -79,6 +85,7 @@ export default function Footer() {
               >
                 <InstagramIcon />
               </a>
+              */}
             </div>
           </div>
         </div>
@@ -86,10 +93,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <span className="font-body text-xs text-white/40 tracking-wide">
-            &copy; {new Date().getFullYear()} Sterling. All rights reserved.
+            &copy; {new Date().getFullYear()} Sterling Breckenridge. All rights reserved.
           </span>
           <span className="font-body text-xs text-white/30 tracking-wide">
-            Designed & built with care
+            Designed & built with and without AI
           </span>
         </div>
       </div>

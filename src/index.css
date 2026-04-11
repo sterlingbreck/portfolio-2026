@@ -192,3 +192,24 @@ body {
 .animate-loading {
   animation: loading 2s ease-in-out infinite;
 }
+
+@keyframes text-glow-orange {
+  0%, 100% {
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 0 rgba(251, 146, 60, 0);
+  }
+  50% {
+    color: rgba(251, 146, 60, 0.9);
+    text-shadow: 0 0 10px rgba(251, 146, 60, 0.35);
+  }
+}
+
+.animate-text-glow {
+  animation: text-glow-orange 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-text-glow {
+    animation: none;
+  }
+}

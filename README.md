@@ -56,6 +56,24 @@ Drop images (jpg, png, webp, avif) into `src/assets/gallery/`. They are automati
 ### Projects
 Edit `src/data/projects.ts` to update project titles, descriptions, tags, images, and links.
 
+### Favicon
+The favicon set (browser tabs, iOS Add-to-Home-Screen, Android Chrome, PWA) is generated from a single source PNG via a one-shot script.
+
+To swap in a new favicon image:
+
+1. Replace `scripts/source-favicon.png` with your new image. Requirements:
+   - **Square** (the script will reject non-square images)
+   - **At least 512×512** — 1024×1024 ideal
+   - **Transparent background** preferred
+   - **~10% padding** around the logo so Android's circle/squircle crop doesn't clip it
+2. Run the generator:
+   ```bash
+   npm run favicons
+   ```
+   This writes `favicon.ico`, `favicon-96x96.png`, `apple-touch-icon.png`, and the two `web-app-manifest-*.png` files into `public/`.
+3. Commit the updated `scripts/source-favicon.png` and the regenerated files in `public/`, then push. Cloudflare will redeploy in 1–2 min.
+4. **Hard-refresh** (Cmd+Shift+R) the live site to bust browser cache. For iOS Add-to-Home-Screen testing, delete the existing home screen tile first — iOS aggressively caches it.
+
 ## Project Structure
 
 ```
