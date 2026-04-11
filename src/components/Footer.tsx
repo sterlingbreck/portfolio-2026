@@ -1,4 +1,4 @@
-import { Mail, ArrowUpRight } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 function GithubIcon({ size = 20 }: { size?: number }) {
   return (

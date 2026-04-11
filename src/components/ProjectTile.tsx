@@ -20,7 +20,7 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
             key={i}
             src={src}
             alt={`${project.title} ${i + 1}`}
-            className="w-full aspect-square object-cover border border-neutral-600 rounded-lg"
+            className="w-full aspect-square object-cover border border-neutral-800 rounded-lg"
           />
         ))}
       </div>

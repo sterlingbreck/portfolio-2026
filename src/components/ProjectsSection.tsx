@@ -9,7 +9,7 @@ export default function ProjectsSection() {
       style={{ paddingTop: 'clamp(3rem, 8vw, 6rem)', paddingBottom: 'clamp(3rem, 8vw, 6rem)' }}
     >
       <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-accent tracking-tight mb-4">
-        Current and Past Projects
+        Projects
       </h2>
       <p className="font-body text-text-muted text-base sm:text-lg mb-12 lg:mb-16 max-w-xl">
         A curated collection of projects spanning web development, brand identity, print and digital design, CMS integrations, and project management.

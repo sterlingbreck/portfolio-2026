@@ -48,6 +48,21 @@ export const projects: Project[] = [
   },
   {
     id: 'project-4',
+    title: 'Varnish Software',
+    description:
+      'A monospaced typeface designed for creative coding environments. Five weights, full Latin character set, ligature support, and optimized for on-screen legibility at small sizes.',
+    tags: ['Typography', 'Type Design'],
+    imageUrls: [
+      '/src/assets/projects/projects-varnish-1.png',
+      '/src/assets/projects/projects-varnish-2.png',
+      '/src/assets/projects/projects-varnish-3.png',
+      '/src/assets/projects/projects-varnish-4.png',
+    ],
+    projectUrl: 'https://www.varnish-software.com/',
+    year: 'Rebrand',
+  },
+  {
+    id: 'project-5',
     title: 'Evrlink',
     description:
       'A minimal portfolio site for an award-winning architecture studio. Large-format imagery, horizontal scroll galleries, and a restrained typographic system that lets the work speak for itself.',
@@ -61,23 +76,38 @@ export const projects: Project[] = [
     projectUrl: 'https://www.linkedin.com/in/sbreck/',
     year: 'Project Manager + Developer',
   },
-    {
-    id: 'project-5',
-    title: 'Avery Dennison',
+  {
+    id: 'project-6',
+    title: 'Akamai',
     description:
       'Sustainable packaging design for a natural skincare line. Mono-material construction, soy-based inks, and a modular label system that scales across 40+ SKUs while maintaining visual cohesion.',
     tags: ['Packaging', 'Sustainability', 'Print'],
     imageUrls: [
-      '/src/assets/projects/projects-avery-1.png',
-      '/src/assets/projects/projects-avery-2.png',
-      '/src/assets/projects/projects-avery-3.png',
-      '/src/assets/projects/projects-avery-4.png',
+      '/src/assets/projects/projects-akamai-1.png',
+      '/src/assets/projects/projects-akamai-2.png',
+      '/src/assets/projects/projects-akamai-3.png',
+      '/src/assets/projects/projects-akamai-4.png',
     ],
     projectUrl: 'https://www.averydennison.com/',
+    year: 'Technical Project Manager',
+  },
+    {
+    id: 'project-7',
+    title: 'Accenture',
+    description:
+      'Sustainable packaging design for a natural skincare line. Mono-material construction, soy-based inks, and a modular label system that scales across 40+ SKUs while maintaining visual cohesion.',
+    tags: ['Packaging', 'Sustainability', 'Print'],
+    imageUrls: [
+      '/src/assets/projects/projects-accenture-3.png',
+      '/src/assets/projects/projects-accenture-2.png',
+      '/src/assets/projects/projects-accenture-1.png',
+      '/src/assets/projects/projects-accenture-4.png',
+    ],
+    projectUrl: 'https://www.accenture.com/',
     year: 'Sr Developer',
   },
   {
-    id: 'project-6',
+    id: 'project-8',
     title: 'Nissan & Infiniti USA Websites',
     description:
       'Sustainable packaging design for a natural skincare line. Mono-material construction, soy-based inks, and a modular label system that scales across 40+ SKUs while maintaining visual cohesion.',
@@ -91,23 +121,8 @@ export const projects: Project[] = [
     projectUrl: 'https://www.nissanusa.com/',
     year: 'Manager Frontend Development + Sr Developer',
   },
-    {
-    id: 'project-7',
-    title: 'Infiniti USA',
-    description:
-      'Sustainable packaging design for a natural skincare line. Mono-material construction, soy-based inks, and a modular label system that scales across 40+ SKUs while maintaining visual cohesion.',
-    tags: ['Packaging', 'Sustainability', 'Print'],
-    imageUrls: [
-      '/src/assets/projects/projects-avery-1.png',
-      '/src/assets/projects/projects-avery-2.png',
-      '/src/assets/projects/projects-avery-3.png',
-      '/src/assets/projects/projects-avery-4.png',
-    ],
-    projectUrl: 'https://www.averydennison.com/',
-    year: 'Manager Frontend Development + Sr Developer',
-  },
   {
-    id: 'project-8',
+    id: 'project-9',
     title: 'David Lynch',
     description:
       'Sustainable packaging design for a natural skincare line. Mono-material construction, soy-based inks, and a modular label system that scales across 40+ SKUs while maintaining visual cohesion.',
@@ -122,7 +137,7 @@ export const projects: Project[] = [
     year: 'Sr Developer + Production',
   },
   {
-    id: 'project-9',
+    id: 'project-10',
     title: 'Greg Gorman Photography',
     description:
       'Sustainable packaging design for a natural skincare line. Mono-material construction, soy-based inks, and a modular label system that scales across 40+ SKUs while maintaining visual cohesion.',
