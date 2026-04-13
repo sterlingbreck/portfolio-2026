@@ -117,7 +117,7 @@ export const Component = () => {
               </div>
             
           <div className="max-w-4xl lg:-translate-y-8 pr-12">
-            <h1 className="text-[clamp(3.5rem,9.5vw,11.5rem)] font-black leading-[0.87] tracking-tighter text-white uppercase italic-none">
+            <h1 className="text-[clamp(2.5rem,9.5vw,11.5rem)] font-black leading-[0.87] tracking-tighter text-white uppercase italic-none">
               STERLING <br /> <span className="text-outline">BRECKENRIDGE</span>
             </h1>
             <p className="mt-8 font-mono text-[11px] text-white/40 uppercase tracking-[0.35em] max-w-sm leading-relaxed">
@@ -137,41 +137,8 @@ export const Component = () => {
         </div>
 
         {/* Right Side Deck: Flex shrink fix for layout stability */}
-        <div className="w-full md:w-80 lg:w-96 flex-shrink-0 flex flex-col gap-4 justify-center z-20">
-          {[
-            { id: "001", title: "AVAILABILITY", val: "Open", type: "progress" },
-            { id: "002", title: "STUDIO STATS", val: "20+ Wins", type: "data" },
-            { id: "003", title: "EXPERTISE", val: "Creative Dev", type: "text" }
-          ].map((item) => (
-            <div key={item.id} className="command-cell glass-panel p-6 sm:p-7 block opacity-1">
-              <span className="font-mono text-[9px] text-white/25 uppercase tracking-widest block mb-3">{item.id} // {item.title}</span>
-              {item.type === "progress" ? (
-                <div className="flex justify-between items-end mt-2">
-                  <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tighter">{item.val}</h4>
-                  <div className="h-[2px] w-20 bg-white/5 rounded-full overflow-hidden">
-                     <div className="h-full bg-white w-[60%] animate-loading" />
-                  </div>
-                </div>
-              ) : item.type === "data" ? (
-                <div className="mt-4 flex flex-col gap-3">
-                  <div className="flex justify-between text-[10px] font-mono text-white/50">
-                    <span>Awwwards Tier</span>
-                    <span>2024-25</span>
-                  </div>
-                  <div className="h-[1px] w-full bg-white/5" />
-                  <div className="flex justify-between text-[10px] font-mono text-white/50">
-                    <span>Retention Rate</span>
-                    <span>98.2%</span>
-                  </div>
-                </div>
-              ) : (
-                <h3 className="text-sm font-medium text-white/70 mt-3 leading-snug">
-                  Transforming static interfaces into <span className="italic text-white">narrative apertures</span>.
-                </h3>
-              )}
-            </div>
-          ))}
-        </div>
+        
+
       </div>
     </section>
   );
