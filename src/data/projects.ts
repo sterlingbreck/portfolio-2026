@@ -17,19 +17,24 @@ export const projects: Project[] = [
     id: 'project-1',
     title: 'Bitcoin Video Magazine',
     description:
-      'Platform creation for an independent Bitcoin documentary publication, integrating CMS-driven editorial workflows, content automation. Driving the transition from manual publishing to a fully automated pipeline so the editorial team could focus on storytelling instead of logistics.',
+      'Bitcoin Video Magazine is something new and TOTALLY DIFFERENT from anything which has ever lived in the Bitcoin media space, before. BVM will take you on a fun, educational, and inspirational journey around the world of Bitcoin and the Plebs #BUIDLing on it and supporting a Bitcoin Standard.',
     tags: [
-      'Bitcoin UGC',
-      'Architecture',
-      'CMS Integration',
-      'Content Automation',
       'Application Development',
-      'Headless CMS',
-      'Editorial Design',
+      'Product Development',
+      'UX',
+      'CMS Integration',
       'React',
+      'Bitcoin UGC',
+      'Content Automation',
+      
+      'Headless CMS',
+      'Onboarding',
+      
       'Print + Web Design',
       'Web Development',
+      
       'Claude Code',
+      'Solutions Engineering',
     ],
     imageUrls: [
       img('projects-bvm-1.png'),
@@ -72,7 +77,7 @@ export const projects: Project[] = [
     id: 'project-3',
     title: 'Rumble King',
     description:
-      'Identity refresh and digital launch for a regional lifestyle brand. Wordmark exploration, type system selection, and a small-format website built to spotlight new collections, with a punchy high-contrast visual language that worked equally well in print and on-screen.',
+      'Full brand identity refresh and digital presence for Rumble King, a popular Southern California band. Designed the wordmark, type system, and high-contrast visual language carried across web, print, and merchandise. Advisory for marketing, e-commerce and SASS integration, fulfillment, to support brand expansion.',
     tags: [
       'Premium Apparel Rebrand',
       'Brand Identity',
@@ -81,8 +86,10 @@ export const projects: Project[] = [
       'Web Development',
       'Print Design',
       'Adobe Creative Cloud',
+      'MidJourney',
       'Figma',
       'CMS Integration',
+      'Fulfillment Advisory',
     ],
     imageUrls: [
       img('projects-rk-1.png'),
