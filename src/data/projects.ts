@@ -33,10 +33,10 @@ export const projects: Project[] = [
       'Solutions Engineering',
     ],
     imageUrls: [
-      img('projects-bvm-1.png'),
+      img('projects-bvm-7.png'),
       img('projects-bvm-2.png'),
-      img('projects-bvm-3.png'),
       img('projects-bvm-4.png'),
+      img('projects-bvm-1.png'),
     ],
     projectLinkLabel: 'In Development',
     year: 'Head of Development',
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     imageUrls: [
       img('projects-wor-2.png'),
       img('projects-wor-7.png'),
-      img('projects-wor-4.png'),
+      img('projects-wor-8.png'),
       img('projects-wor-6.png'),
     ],
     projectUrl: 'https://without-rulers.com',
