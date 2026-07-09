@@ -19,20 +19,16 @@ export const projects: Project[] = [
     description:
       'Bitcoin Video Magazine is something new and TOTALLY DIFFERENT from anything which has ever lived in the Bitcoin media space, before. BVM will take you on a fun, educational, and inspirational journey around the world of Bitcoin and the Plebs #BUIDLing on it and supporting a Bitcoin Standard.',
     tags: [
+      'Cloudflare Workers',
+      'Content Automation',
       'Application Development',
       'Product Development',
-      'UX',
       'CMS Integration',
       'React',
       'Bitcoin UGC',
-      'Content Automation',
-      
       'Headless CMS',
-      'Onboarding',
-      
       'Print + Web Design',
       'Web Development',
-      
       'Claude Code',
       'Solutions Engineering',
     ],
@@ -66,9 +62,9 @@ export const projects: Project[] = [
     ],
     imageUrls: [
       img('projects-wor-2.png'),
-      img('projects-wor-6.png'),
+      img('projects-wor-7.png'),
       img('projects-wor-4.png'),
-      img('projects-wor-5.png'),
+      img('projects-wor-6.png'),
     ],
     projectUrl: 'https://without-rulers.com',
     year: 'Founder',
