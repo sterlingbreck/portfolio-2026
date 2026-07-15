@@ -1,7 +1,40 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { projects } from '../data/projects';
 import ProjectTile from './ProjectTile';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function ProjectsSection() {
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray<HTMLElement>('article').forEach((card) => {
+        gsap.fromTo(
+          card,
+          { y: 48, autoAlpha: 0 },
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        );
+      });
+    }, listRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
       id="work"
@@ -16,7 +49,7 @@ export default function ProjectsSection() {
         A collection of projects spanning development, CDN performance/security, brand identity, print and digital design, CMS integrations, customer success, and technical project management.
       </p>
       
-      <div className="space-y-8 lg:space-y-12">
+      <div ref={listRef} className="space-y-8 lg:space-y-12">
         {projects.map((project, index) => (
           <ProjectTile
             key={project.id}
