@@ -48,7 +48,7 @@ export default function Footer() {
 
           <div className="flex flex-col gap-4">
             <a
-              href="mailto:hello@sterling.design"
+              href="mailto:sterlingbreck@gmail.com"
               className="inline-flex items-center gap-2 text-white/80 hover:text-white
                 transition-colors duration-200 font-body text-sm no-underline"
             >
@@ -68,7 +68,7 @@ export default function Footer() {
               </a>
               */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/sbreck/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/50 hover:text-white transition-colors duration-200"
