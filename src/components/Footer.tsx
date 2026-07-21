@@ -1,4 +1,4 @@
-import { Mail } from 'lucide-react';
+import ContactForm from './ContactForm';
 
 /*
 function GithubIcon({ size = 20 }: { size?: number }) {
@@ -46,15 +46,8 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <a
-              href="mailto:sterlingbreck@gmail.com"
-              className="inline-flex items-center gap-2 text-white/80 hover:text-white
-                transition-colors duration-200 font-body text-sm no-underline"
-            >
-              <Mail size={16} />
-              sterlingbreck@gmail.com
-            </a>
+          <div className="flex flex-col gap-4 w-full lg:w-auto">
+            <ContactForm />
             <div className="flex gap-4">
               {/*
               <a

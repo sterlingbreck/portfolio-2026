@@ -37,9 +37,32 @@ A single-page portfolio website built with React, TypeScript, and Tailwind CSS v
 
 ### Footer
 - "Let's work together" CTA section
-- Email contact link
+- Contact form (email + message) backed by a Cloudflare Worker — see [Contact Form](#contact-form)
 - Social icons (GitHub, LinkedIn, Instagram)
 - Copyright bar
+
+### Contact Form
+Submissions are sent as email via a standalone Cloudflare Worker (`worker/`) using the
+[Email Service](https://developers.cloudflare.com/email-service/) `send_email` binding —
+from `portfolio@nyk-nyc.com` to sterlingbreck@gmail.com, with Reply-To set to the sender.
+[Turnstile](https://developers.cloudflare.com/turnstile/) verification blocks bots.
+
+- The worker (`portfolio-contact`) is deployed **separately** from the site, on the zone route
+  `www.nyk-nyc.com/api/contact*`, so the form posts same-origin with no CORS.
+- The Turnstile **sitekey** (public) is a constant in `src/components/ContactForm.tsx`;
+  the **secret** is a worker secret: `npx wrangler secret put TURNSTILE_SECRET_KEY -c worker/wrangler.jsonc`.
+- The binding is restricted via `allowed_destination_addresses` — the worker can only ever
+  email sterlingbreck@gmail.com.
+
+```bash
+npm run worker:dev      # run the worker locally on :8787 (uses worker/.dev.vars)
+npm run worker:deploy   # deploy the worker (routes, binding, vars)
+npm run worker:types    # regenerate worker/worker-configuration.d.ts after config changes
+```
+
+Local dev: run `npm run worker:dev` alongside `npm run dev` — Vite proxies `/api` to `:8787`.
+`worker/.dev.vars` (gitignored) holds Cloudflare's always-pass Turnstile test secret for local use.
+Frontend changes deploy with the site on git push; worker changes require `npm run worker:deploy`.
 
 ## Getting Started
 
@@ -83,7 +106,8 @@ src/
     Gallery.tsx         — Auto-scrolling full-bleed slideshow
     ProjectTile.tsx     — Individual project card
     ProjectsSection.tsx — Stacked project tile list
-    Footer.tsx          — Contact info and social links
+    Footer.tsx          — Contact section and social links
+    ContactForm.tsx     — Email + message form with Turnstile
   assets/
     gallery/            — Gallery source images
   data/
@@ -92,4 +116,7 @@ src/
     index.ts            — TypeScript interfaces
   App.tsx               — Root layout
   index.css             — Tailwind theme and base styles
+worker/
+  wrangler.jsonc        — Contact worker config (routes, email binding)
+  src/index.ts          — POST /api/contact handler (validate → Turnstile → send)
 ```

@@ -1,0 +1,25 @@
+{
+	"$schema": "../node_modules/wrangler/config-schema.json",
+	"name": "portfolio-contact",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-07-01",
+	"routes": [
+		{ "pattern": "www.nyk-nyc.com/api/contact*", "zone_name": "nyk-nyc.com" },
+		{ "pattern": "nyk-nyc.com/api/contact*", "zone_name": "nyk-nyc.com" }
+	],
+	"send_email": [
+		{
+			// safety rail: this binding may only email me
+			"name": "CONTACT_EMAIL",
+			"allowed_destination_addresses": ["sterlingbreck@gmail.com"]
+		}
+	],
+	"vars": {
+		// sender domain must be onboarded to Email Sending (dashboard:
+		// Compute & AI → Email Service → Email Sending)
+		"NOTIFY_FROM": "portfolio@nyk-nyc.com",
+		"NOTIFY_TO": "sterlingbreck@gmail.com"
+	},
+	"observability": { "enabled": true }
+	// TURNSTILE_SECRET_KEY: local dev → .dev.vars ; production → `npx wrangler secret put`
+}

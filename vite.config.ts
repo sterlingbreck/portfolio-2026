@@ -28,4 +28,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    // contact form API served by `npm run worker:dev` during local dev
+    proxy: {
+      '/api': 'http://localhost:8787',
+    },
+  },
 })
