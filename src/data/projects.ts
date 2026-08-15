@@ -89,7 +89,7 @@ export const projects: Project[] = [
       img('projects-gen-2.png'),
       img('projects-gen-1.png'),
     ],
-    projectUrl: 'https://wor-product-image-creator.sterlingbreck.workers.dev/',
+    projectUrl: 'https://product-image-maker.sterlingbreck.workers.dev/',
     year: 'Custom Productivity Tools',
   },
   {
