@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import type { Project } from '../types';
+import ImageLightbox from './ImageLightbox';
 
 interface ProjectTileProps {
   project: Project;
@@ -7,27 +9,38 @@ interface ProjectTileProps {
 }
 
 export default function ProjectTile({ project, reversed = false }: ProjectTileProps) {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const images = project.imageUrls.slice(0, 4);
+
   return (
     <article
       className="rounded-2xl bg-surface shadow-[0_1px_4px_rgba(0,0,0,0.06)] overflow-hidden
         flex flex-col lg:flex-row"
-      style={{ flexDirection: reversed ? undefined : undefined }}
     >
       {/* Images */}
       <div className={`lg:w-1/2 bg-[#171717] p-4 grid grid-cols-2 gap-3 min-h-64 sm:min-h-72 ${reversed ? 'lg:order-2' : ''}`}>
-        {project.imageUrls.slice(0, 4).map((src, i) => (
-          <img
+        {images.map((src, i) => (
+          <button
             key={i}
-            src={src}
-            alt={`${project.title} ${i + 1}`}
-            className="w-full aspect-square object-cover border border-neutral-800 rounded-lg"
-          />
+            type="button"
+            onClick={() => setLightboxIndex(i)}
+            aria-label={`View larger: ${project.title} image ${i + 1}`}
+            className="block w-full h-full aspect-square cursor-zoom-in overflow-hidden rounded-lg
+              border border-neutral-800 hover:border-white/30 transition-colors duration-200
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+          >
+            <img
+              src={src}
+              alt={`${project.title} ${i + 1}`}
+              className="w-full h-full object-cover rounded-lg"
+            />
+          </button>
         ))}
       </div>
 
       {/* Content */}
       <div className={`lg:w-1/2 bg-[#171717] p-6 sm:p-8 lg:p-12 flex flex-col justify-center ${reversed ? 'lg:order-1' : ''}`}>
-        <span className="text-xs font-body uppercase tracking-[0.2em] text-white/40 mb-4 block">
+        <span className="text-xs font-body uppercase tracking-[0.2em] text-white/50 mb-4 block">
           {project.year}
         </span>
 
@@ -43,7 +56,7 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[11px] uppercase tracking-[0.15em] font-body text-white/40
+              className="text-[11px] uppercase tracking-[0.15em] font-body text-white/50
                 border border-white/15 rounded-full px-3 py-1"
             >
               {tag}
@@ -63,7 +76,7 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-body uppercase tracking-[0.15em]
-                  text-white/80 hover:text-white transition-colors duration-200 no-underline group w-fit"
+                  text-orange-400/80 hover:text-white transition-colors duration-200 no-underline group w-fit"
               >
                 {label}
                 <ArrowUpRight
@@ -96,6 +109,14 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
           );
         })()}
       </div>
+
+      <ImageLightbox
+        images={images}
+        title={project.title}
+        index={lightboxIndex}
+        onIndexChange={setLightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+      />
     </article>
   );
 }
