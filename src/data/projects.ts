@@ -68,10 +68,38 @@ export const projects: Project[] = [
       img('projects-ada-1.png'),
     ],
     projectUrl: 'https://ada-title-ii-scanner.sterlingbreck.workers.dev/',
-    year: 'Custom Auditing Tools',
+    year: 'Custom Auditing Tool',
   },
   {
     id: 'project-3',
+    title: 'AI Product Try-On Generator',
+    description:
+      'An AI-powered virtual try-on tool that lets shoppers preview how a garment looks on a real person before buying. Upload a photo of a person and a flat product shot of a shirt, and the app generates a realistic preview of them wearing it — preserving pose, body shape, and lighting — in a few seconds.  Built entirely on the Cloudflare edge platform.',
+    tags: [
+      'Application Development',
+      'AI Image Generation',
+      'Image Compression',
+      'CDN Content Development',
+      'SAAS Development',
+      'TypeScript',
+      'NextJS', 'Claude Code',
+      'Wrangler CLI', 'GIT CI',
+      'Cloudflare Workers', 
+      'Cloudflare R2 Storage',
+      'Cloudflare AI Workers',
+      'Cloudflare AI Gateway',
+    ],
+    imageUrls: [
+      img('ai-gen-1.png'),
+      img('ai-gen-2.png'),
+      img('ai-gen-3.png'),
+      img('ai-gen-4.png'),
+    ],
+    projectUrl: 'https://wor-virtual-try-on.sterlingbreck.workers.dev/',
+    year: 'Product Development',
+  },
+  {
+    id: 'project-4',
     title: 'Bulk Product Image Creator',
     description:
       'Layer images together for templated, bulk or individual export of configurable product photos.  Client-side processing ensures privacy and instant results. Automatic compression, scaling, and centering of assets on upload with options for individual modification.  Multiple output formats with option for bulk grayscale export variation.',
@@ -95,7 +123,7 @@ export const projects: Project[] = [
     year: 'Custom Productivity Tools',
   },
   {
-    id: 'project-4',
+    id: 'project-5',
     title: 'Without Rulers Apparel',
     description:
       'Founded and built an independent direct-to-consumer and B2b apparel brand from concept through launch — identity system, e-commerce platform, payment integration, SEO, and editorial product photography. Designed an editorial storefront optimized for mobile checkout and responsive product storytelling, with a fully integrated print and digital brand system.',
@@ -123,7 +151,7 @@ export const projects: Project[] = [
     year: 'Founder',
   },
   {
-    id: 'project-5',
+    id: 'project-6',
     title: 'Rumble King',
     description:
       'Full brand identity refresh and digital presence for Rumble King, a popular Southern California band. Designed the wordmark, type system, and high-contrast visual language carried across web, print, and merchandise. Advisory for marketing, e-commerce and SASS integration, fulfillment, to support brand expansion.',
@@ -150,7 +178,7 @@ export const projects: Project[] = [
     year: 'Designer + Consultant',
   },
   {
-    id: 'project-6',
+    id: 'project-7',
     title: 'Varnish Software',
     description:
       'Served as technical advisor for enterprise customers evaluating and implementing Varnish Cache. Consulted on caching architectures across bare metal and AWS VPC environments, optimizing cache hit ratios and reducing origin load by up to 85%. Built customer education programs translating complex caching concepts into actionable implementation plans, and contributed performance insights back to the product roadmap.',
@@ -177,7 +205,7 @@ export const projects: Project[] = [
     year: 'Solutions Engineer',
   },
   {
-    id: 'project-7',
+    id: 'project-8',
     title: 'Evrlink',
     description:
       'Managed cross-functional coordination between US design teams and offshore development for an MVP launch across mobile and desktop. Wrote UX specifications and product requirements, then built the frontend MVP including performance-optimized JavaScript animations and responsive design patterns. Established agile sprint planning frameworks and project management best practices',
@@ -204,7 +232,7 @@ export const projects: Project[] = [
     year: 'Technical Project Manager + Senior Developer',
   },
   {
-    id: 'project-8',
+    id: 'project-9',
     title: 'Akamai',
     description:
       'Led post-sales implementation and ongoing customer success for West Coast financial services and e-commerce clients. Pioneered Akamai\'s first CLI-managed configurations for Fortune 500 banks, orchestrated zero-downtime infrastructure migrations across hybrid cloud environments, and ran IPv6 + HTTP/2 rollouts. Spearheaded the beta implementation of Bot Manager and tuned WAF rules for high-availability requirements.',
@@ -236,7 +264,7 @@ export const projects: Project[] = [
     year: 'Technical Project Manager II — Financial Services',
   },
   {
-    id: 'project-9',
+    id: 'project-10',
     title: 'Accenture',
     description:
       'Managed onshore/offshore frontend development teams of 8–12 engineers delivering CMS integration projects on Adobe Experience Manager, Hybris, and Demandware for enterprise clients. Led client-facing release reviews, coordinated deployment planning across complex environments, and implemented agile methodologies across cross-functional teams spanning PMO, UX, BI, and backend stakeholders.',
@@ -265,7 +293,7 @@ export const projects: Project[] = [
     year: 'Manager, Frontend Development',
   },
   {
-    id: 'project-10',
+    id: 'project-11',
     title: 'Capital Group / American Funds',
     description:
       'Forward Deployed manager of frontend development team for large architecture and Adode Experience Manager Migration. Led client-facing release reviews, coordinated deployment planning across complex environments, and implemented agile methodologies across cross-functional teams spanning PMO, UX, BI, and backend stakeholders.',
@@ -294,7 +322,7 @@ export const projects: Project[] = [
     year: 'Manager, Frontend Development',
   },
   {
-    id: 'project-11',
+    id: 'project-12',
     title: 'Nissan & Infiniti USA Websites',
     description:
       'Led maintenance, re-architecture, and weekly deployment cycles for nissanusa.com and infinitiusa.com — two of the highest-traffic automotive web properties in the US. Managed CI/CD planning and migrations across distributed on/offshore development resources and executed enterprise-scale Adobe Experience Manager migrations for both brands.',
@@ -324,7 +352,7 @@ export const projects: Project[] = [
     year: 'Manager, Frontend Development + Senior Developer',
   },
   {
-    id: 'project-12',
+    id: 'project-13',
     title: 'David Lynch',
     description:
       'Architected and developed web properties for filmmaker David Lynch, including interactive Flash experiences, an e-commerce storefront, and a subscription-based member platform that pioneered direct-to-fan content distribution. Managed DNS infrastructure and Apple Xserve web servers to keep media-rich content online for a global audience.',
@@ -352,7 +380,7 @@ export const projects: Project[] = [
     year: 'Lead Developer + Production Artist',
   },
   {
-    id: 'project-13',
+    id: 'project-14',
     title: 'Greg Gorman Photography',
     description:
       'Developed the portfolio site for celebrity photographer Greg Gorman — a quietly minimal showcase for decades of iconic black-and-white portraiture. Focused on large-format imagery, restrained typography, and a CMS workflow that let his studio update galleries without engineering involvement.',
