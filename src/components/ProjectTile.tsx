@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import type { Project } from '../types';
 import ImageLightbox from './ImageLightbox';
+import { isVideo } from '../lib/media';
 
 interface ProjectTileProps {
   project: Project;
@@ -29,23 +30,41 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
               border border-neutral-800 hover:border-white/30 transition-colors duration-200
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
-            <img
-              src={src}
-              alt={`${project.title} ${i + 1}`}
-              className="w-full h-full object-cover rounded-lg"
-            />
+            {isVideo(src) ? (
+              <video
+                src={src}
+                aria-label={`${project.title} ${i + 1}`}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            ) : (
+              <img
+                src={src}
+                alt={`${project.title} ${i + 1}`}
+                className="w-full h-full object-cover rounded-lg"
+              />
+            )}
           </button>
         ))}
       </div>
 
       {/* Content */}
       <div className={`lg:w-1/2 bg-[#171717] p-6 sm:p-8 lg:p-12 flex flex-col justify-center ${reversed ? 'lg:order-1' : ''}`}>
-        <span className="text-xs font-body uppercase tracking-[0.2em] text-white/50 mb-4 block">
+        <span className="text-xs font-body uppercase tracking-[0.2em] text-orange-300 mb-4 block">
           {project.year}
         </span>
 
         <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl text-white leading-tight mb-4">
           {project.title}
+          {project.titleNote && (
+            <>{' '}<span className="ml-2 align-middle text-xs sm:text-sm font-body uppercase tracking-[0.15em] text-white/50">
+              {project.titleNote}
+            </span></>
+          )}
         </h3>
 
         <p className="font-body text-sm sm:text-base text-white/60 leading-relaxed mb-6">

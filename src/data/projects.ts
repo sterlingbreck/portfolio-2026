@@ -1,6 +1,6 @@
 import type { Project } from '../types';
 
-const imageModules = import.meta.glob('../assets/projects/*.png', {
+const imageModules = import.meta.glob('../assets/projects/*.{png,gif,webp,mp4,webm}', {
   eager: true,
   query: '?url',
   import: 'default',
@@ -15,6 +15,31 @@ function img(name: string): string {
 export const projects: Project[] = [
   {
     id: 'project-1',
+    title: 'OBL',
+    titleNote: '(Active Production)',
+    description:
+      'Every code commit is represented in dynamic ways across this multiplayer island world. Created to support open source development and learning, powered by realtime data.  User can speak and interact in realtime while exploring lands and projects built by other open source contributors.  Built with WebGL2, powered by GitHub, Cloudflare, LLMs, and open source contributors to name a few.',
+    // Ordered so each row fills the tag column evenly at desktop width.
+    tags: [
+      'Automation', 'Web-based games', 'Cloudflare KV',
+      'Three.js', 'Performance Tuning', 'Architecture',
+      'JavaScript', 'TypeScript', 'Cloudflare Workers',
+      'Cloudflare D1 SQLite', 'Cloudflare Wrangler CLI',
+      'GitHub GraphQL API', 'Cloudflare Durable Objects',
+      'WebGL2', 'CRON Jobs', 'GitHub Auth Integration',
+      'Claude Code', 'GitHub CI', 'SFU Streaming Audio',
+    ],
+    imageUrls: [
+      img('projects-ooga-1.png'),
+      img('projects-ooga-2.png'),
+      img('projects-ooga-3.png'),
+      img('projects-ooga-4.png'),
+    ],
+    projectLinkLabel: 'In Development',
+    year: 'Open Source Contributor + CDN Backend Architecture + Full-Stack Development + Design',
+  },
+  {
+    id: 'project-2',
     title: 'Bitcoin Video Magazine',
     description:
       'Bitcoin Video Magazine is something new and TOTALLY DIFFERENT from anything which has ever lived in the Bitcoin media space, before. BVM will take you on a fun, educational, and inspirational journey around the world of Bitcoin and the Plebs #BUIDLing on it and supporting a Bitcoin Standard.',
@@ -45,32 +70,6 @@ export const projects: Project[] = [
     year: 'Head of Development',
   },
   {
-    id: 'project-2',
-    title: 'ADA Compliance Scanner',
-    description:
-      'Scans a single page against WCAG 2.1 Level AA — the technical standard adopted by the DOJs Title II web rule (28 CFR Part 35, Subpart H) — and produces a report written for developers, compliance staff and administrators at the same time, with detail on how to fix non-compliant content.',
-    tags: [
-      'ADA/WCAG Accessibility Testing',
-      'TypeScript',
-      'Application Development',
-      'NextJS', 'Hono',
-      'Cloudflare D1',
-      'Cloudflare Workers',
-      'Cloudflare Turnstile',
-      'Rate Limiting',
-      'Cloudflare Wrangler CLI',
-      'Tailwind CSS',
-    ],
-    imageUrls: [
-      img('projects-ada-4.png'),
-      img('projects-ada-3.png'),
-      img('projects-ada-2.png'),
-      img('projects-ada-1.png'),
-    ],
-    projectUrl: 'https://ada-title-ii-scanner.sterlingbreck.workers.dev/',
-    year: 'Custom Auditing Tool',
-  },
-  {
     id: 'project-3',
     title: 'AI Product Try-On Generator',
     description:
@@ -99,30 +98,6 @@ export const projects: Project[] = [
   },
   {
     id: 'project-4',
-    title: 'Bulk Product Image Creator',
-    description:
-      'Layer images together for templated, bulk or individual export of configurable product photos.  Client-side processing ensures privacy and instant results. Automatic compression, scaling, and centering of assets on upload with options for individual modification.  Multiple output formats with option for bulk grayscale export variation.',
-    tags: [
-      'Application Development',
-      'Image Optimization',
-      'Image Compression',
-      'CDN Content Development',
-      'Solutions Engineering',
-      'NextJS', 'Claude Code',
-      'Wrangler CLI', 'GIT CI',
-      'Cloudflare Workers','TypeScript',
-    ],
-    imageUrls: [
-      img('projects-gen-4.png'),
-      img('projects-gen-3.png'),
-      img('projects-gen-2.png'),
-      img('projects-gen-1.png'),
-    ],
-    projectUrl: 'https://product-image-maker.sterlingbreck.workers.dev/',
-    year: 'Custom Productivity Tools',
-  },
-  {
-    id: 'project-5',
     title: 'Without Rulers Apparel',
     description:
       'Founded and built an independent direct-to-consumer and B2b apparel brand from concept through launch — identity system, e-commerce platform, payment integration, SEO, and editorial product photography. Designed an editorial storefront optimized for mobile checkout and responsive product storytelling, with a fully integrated print and digital brand system.',
@@ -150,7 +125,57 @@ export const projects: Project[] = [
     year: 'Founder',
   },
   {
+    id: 'project-5',
+    title: 'Bulk Product Image Creator',
+    description:
+      'Layer images together for templated, bulk or individual export of configurable product photos.  Client-side processing ensures privacy and instant results. Automatic compression, scaling, and centering of assets on upload with options for individual modification.  Multiple output formats with option for bulk grayscale export variation.',
+    tags: [
+      'Application Development',
+      'Image Optimization',
+      'Image Compression',
+      'CDN Content Development',
+      'Solutions Engineering',
+      'NextJS', 'Claude Code',
+      'Wrangler CLI', 'GIT CI',
+      'Cloudflare Workers','TypeScript',
+    ],
+    imageUrls: [
+      img('projects-gen-4.png'),
+      img('projects-gen-3.png'),
+      img('projects-gen-2.png'),
+      img('projects-gen-1.png'),
+    ],
+    projectUrl: 'https://product-image-maker.sterlingbreck.workers.dev/',
+    year: 'Custom Productivity Tools',
+  },
+  {
     id: 'project-6',
+    title: 'ADA Compliance Scanner',
+    description:
+      'Scans a single page against WCAG 2.1 Level AA — the technical standard adopted by the DOJs Title II web rule (28 CFR Part 35, Subpart H) — and produces a report written for developers, compliance staff and administrators at the same time, with detail on how to fix non-compliant content.',
+    tags: [
+      'ADA/WCAG Accessibility Testing',
+      'TypeScript',
+      'Application Development',
+      'NextJS', 'Hono',
+      'Cloudflare D1',
+      'Cloudflare Workers',
+      'Cloudflare Turnstile',
+      'Rate Limiting',
+      'Cloudflare Wrangler CLI',
+      'Tailwind CSS',
+    ],
+    imageUrls: [
+      img('projects-ada-4.png'),
+      img('projects-ada-3.png'),
+      img('projects-ada-2.png'),
+      img('projects-ada-1.png'),
+    ],
+    projectUrl: 'https://ada-title-ii-scanner.sterlingbreck.workers.dev/',
+    year: 'Custom Auditing Tool',
+  },
+  {
+    id: 'project-7',
     title: 'Rumble King',
     description:
       'Full brand identity refresh and digital presence for Rumble King, a popular Southern California band. Designed the wordmark, type system, and high-contrast visual language carried across web, print, and merchandise. Advisory for marketing, e-commerce and SASS integration, fulfillment, to support brand expansion.',
@@ -177,7 +202,7 @@ export const projects: Project[] = [
     year: 'Designer + Consultant',
   },
   {
-    id: 'project-7',
+    id: 'project-8',
     title: 'Varnish Software',
     description:
       'Served as technical advisor for enterprise customers evaluating and implementing Varnish Cache. Consulted on caching architectures across bare metal and AWS VPC environments, optimizing cache hit ratios and reducing origin load by up to 85%. Built customer education programs translating complex caching concepts into actionable implementation plans, and contributed performance insights back to the product roadmap.',
@@ -204,7 +229,7 @@ export const projects: Project[] = [
     year: 'Solutions Engineer',
   },
   {
-    id: 'project-8',
+    id: 'project-9',
     title: 'Evrlink',
     description:
       'Managed cross-functional coordination between US design teams and offshore development for an MVP launch across mobile and desktop. Wrote UX specifications and product requirements, then built the frontend MVP including performance-optimized JavaScript animations and responsive design patterns. Established agile sprint planning frameworks and project management best practices',
@@ -231,7 +256,7 @@ export const projects: Project[] = [
     year: 'Technical Project Manager + Senior Developer',
   },
   {
-    id: 'project-9',
+    id: 'project-10',
     title: 'Akamai',
     description:
       'Led post-sales implementation and ongoing customer success for West Coast financial services and e-commerce clients. Pioneered Akamai\'s first CLI-managed configurations for Fortune 500 banks, orchestrated zero-downtime infrastructure migrations across hybrid cloud environments, and ran IPv6 + HTTP/2 rollouts. Spearheaded the beta implementation of Bot Manager and tuned WAF rules for high-availability requirements.',
@@ -263,7 +288,7 @@ export const projects: Project[] = [
     year: 'Technical Project Manager II — Financial Services',
   },
   {
-    id: 'project-10',
+    id: 'project-11',
     title: 'Accenture',
     description:
       'Managed onshore/offshore frontend development teams of 8–12 engineers delivering CMS integration projects on Adobe Experience Manager, Hybris, and Demandware for enterprise clients. Led client-facing release reviews, coordinated deployment planning across complex environments, and implemented agile methodologies across cross-functional teams spanning PMO, UX, BI, and backend stakeholders.',
@@ -292,7 +317,7 @@ export const projects: Project[] = [
     year: 'Manager, Frontend Development',
   },
   {
-    id: 'project-11',
+    id: 'project-12',
     title: 'Capital Group / American Funds',
     description:
       'Forward Deployed manager of frontend development team for large architecture and Adode Experience Manager Migration. Led client-facing release reviews, coordinated deployment planning across complex environments, and implemented agile methodologies across cross-functional teams spanning PMO, UX, BI, and backend stakeholders.',
@@ -321,7 +346,7 @@ export const projects: Project[] = [
     year: 'Manager, Frontend Development',
   },
   {
-    id: 'project-12',
+    id: 'project-13',
     title: 'Nissan & Infiniti USA Websites',
     description:
       'Led maintenance, re-architecture, and weekly deployment cycles for nissanusa.com and infinitiusa.com — two of the highest-traffic automotive web properties in the US. Managed CI/CD planning and migrations across distributed on/offshore development resources and executed enterprise-scale Adobe Experience Manager migrations for both brands.',
@@ -351,7 +376,7 @@ export const projects: Project[] = [
     year: 'Manager, Frontend Development + Senior Developer',
   },
   {
-    id: 'project-13',
+    id: 'project-14',
     title: 'David Lynch',
     description:
       'Architected and developed web properties for filmmaker David Lynch, including interactive Flash experiences, an e-commerce storefront, and a subscription-based member platform that pioneered direct-to-fan content distribution. Managed DNS infrastructure and Apple Xserve web servers to keep media-rich content online for a global audience.',
@@ -379,7 +404,7 @@ export const projects: Project[] = [
     year: 'Lead Developer + Production Artist',
   },
   {
-    id: 'project-14',
+    id: 'project-15',
     title: 'Greg Gorman Photography',
     description:
       'Developed the portfolio site for celebrity photographer Greg Gorman — a quietly minimal showcase for decades of iconic black-and-white portraiture. Focused on large-format imagery, restrained typography, and a CMS workflow that let his studio update galleries without engineering involvement.',

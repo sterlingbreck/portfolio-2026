@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Dialog } from '@base-ui/react/dialog';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { isVideo } from '../lib/media';
 
 interface ImageLightboxProps {
   images: string[];
@@ -76,11 +77,25 @@ export default function ImageLightbox({
               <X size={18} />
             </Dialog.Close>
 
-            <img
-              src={images[activeIndex]}
-              alt={`${title} — image ${activeIndex + 1}`}
-              className="max-w-[90vw] max-h-[76vh] w-auto h-auto rounded-xl border border-white/15"
-            />
+            {isVideo(images[activeIndex]) ? (
+              <video
+                key={activeIndex}
+                src={images[activeIndex]}
+                aria-label={`${title} — video ${activeIndex + 1}`}
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="max-w-[90vw] max-h-[76vh] w-auto h-auto rounded-xl border border-white/15"
+              />
+            ) : (
+              <img
+                src={images[activeIndex]}
+                alt={`${title} — image ${activeIndex + 1}`}
+                className="max-w-[90vw] max-h-[76vh] w-auto h-auto rounded-xl border border-white/15"
+              />
+            )}
 
             {images.length > 1 && (
               <div className="flex items-center gap-5">

@@ -3,6 +3,7 @@ export type ProjectLinkVariant = 'link' | 'text' | 'unavailable';
 export interface Project {
   id: string;
   title: string;
+  titleNote?: string;
   description: string;
   tags: string[];
   imageUrls: string[];
