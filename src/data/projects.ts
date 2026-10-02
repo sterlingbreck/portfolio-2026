@@ -16,18 +16,16 @@ export const projects: Project[] = [
   {
     id: 'project-1',
     title: 'HumTalk',
-    titleNote: '(Active Production)',
     description:
-      'Browser-based voice and video calling — start a call and anyone can join from a link, with nothing to install and no phone plan needed. Supports one-on-one calls and groups of up to 100 people, with switching between voice and video mid-call. Includes screen sharing, live captions, breakout rooms, recording with transcripts, waiting rooms, hand raising and noise suppression. Calls run over the internet in Chrome, Safari, Firefox and Edge, and only the host needs a plan.',
+      'Browser-based voice and video application — start a call and anyone can join from a link, with nothing to install and no phone plan needed. Supports one-on-one calls and groups of up to 100 people, with switching between voice and video mid-call. Includes screen sharing, live captions, breakout rooms, recording with transcripts, and waiting rooms.',
     // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Realtime Video', 'Cloudflare KV', 'Automation',
-      'SFU Streaming Audio', 'Cloudflare Wrangler CLI',
-      'Voice Calling', 'Live Captions', 'Architecture',
+      'Realtime Video', 'Realtime Audio', 'Claude Code',
+      'Cloudflare Wrangler CLI', 'Cloudflare D1 SQLite',
+      'Cloudflare Workers', 'TypeScript', 'JavaScript',
       'Screen Sharing', 'Cloudflare Durable Objects',
-      'Noise Suppression', 'JavaScript', 'Claude Code',
-      'Cloudflare Workers', 'Cloudflare D1 SQLite',
-      'Performance Tuning', 'TypeScript', 'GitHub CI',
+      'Live Captions', 'Architecture', 'Cloudflare KV',
+      'GitHub CI', 'Automation', 'Performance Tuning',
     ],
     imageUrls: [
       img('projects-hum-1.png'),
@@ -42,16 +40,15 @@ export const projects: Project[] = [
     title: 'OBL',
     titleNote: '(Active Production)',
     description:
-      'Every code commit is represented in dynamic ways across this multiplayer island world. Created to support open source development and learning, powered by realtime data.  User can speak and interact in realtime while exploring lands and projects built by other open source contributors.  Built with WebGL2, powered by GitHub, Cloudflare, LLMs, and open source contributors to name a few.',
+      'Every code commit is represented in dynamic ways across this multiplayer island world. Created to support open source development and learning, powered by realtime data.  User can speak and interact in realtime while exploring lands and projects built by other open source contributors.',
     // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Automation', 'Web-based games', 'Cloudflare KV',
-      'Three.js', 'Performance Tuning', 'Architecture',
-      'JavaScript', 'TypeScript', 'Cloudflare Workers',
-      'Cloudflare D1 SQLite', 'Cloudflare Wrangler CLI',
-      'GitHub GraphQL API', 'Cloudflare Durable Objects',
-      'WebGL2', 'CRON Jobs', 'GitHub Auth Integration',
-      'Claude Code', 'GitHub CI', 'SFU Streaming Audio',
+      'GitHub CI', 'Cloudflare Durable Objects', 'Three.js',
+      'Streaming Audio', 'GraphQL', 'Performance Tuning',
+      'Cloudflare D1', 'Claude Code', 'Cloudflare Access',
+      'Web-based games', 'Cloudflare KV', 'Architecture',
+      'GitHub oAuth', 'WebGL2', 'CRON Jobs', 'JavaScript',
+      'Automation', 'Cloudflare Workers', 'Wrangler CLI',
     ],
     imageUrls: [
       img('projects-ooga-1.png'),
@@ -68,11 +65,11 @@ export const projects: Project[] = [
     description:
       'Bitcoin Video Magazine is something new and TOTALLY DIFFERENT from anything which has ever lived in the Bitcoin media space, before. BVM will take you on a fun, educational, and inspirational journey around the world of Bitcoin and the Plebs #BUIDLing on it and supporting a Bitcoin Standard.',
     tags: [
-      'Content Automation',
       'CDN Content Development',
+      'Automation', 'CRON Jobs',
       'Solutions Engineering',
       'Application Development',
-      'UGC Content Development',
+      'UGC Content',
       'Print + Web Design',
       'NextJS', 'TypeScript', 
       'Claude Code',
