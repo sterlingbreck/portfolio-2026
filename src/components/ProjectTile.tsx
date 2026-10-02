@@ -11,7 +11,9 @@ interface ProjectTileProps {
 
 export default function ProjectTile({ project, reversed = false }: ProjectTileProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const images = project.imageUrls.slice(0, 4);
+  // 'wide' stacks two full-width images in the space the 2x2 grid uses.
+  const wide = project.imageLayout === 'wide';
+  const images = project.imageUrls.slice(0, wide ? 2 : 4);
 
   return (
     <article
@@ -26,9 +28,9 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
             type="button"
             onClick={() => setLightboxIndex(i)}
             aria-label={`View larger: ${project.title} image ${i + 1}`}
-            className="block w-full h-full aspect-square cursor-zoom-in overflow-hidden rounded-lg
+            className={`block w-full h-full ${wide ? 'col-span-2 aspect-[2/1]' : 'aspect-square'} cursor-zoom-in overflow-hidden rounded-lg
               border border-neutral-800 hover:border-white/30 transition-colors duration-200
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40`}
           >
             {isVideo(src) ? (
               <video
