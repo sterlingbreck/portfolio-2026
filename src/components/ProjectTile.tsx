@@ -11,9 +11,10 @@ interface ProjectTileProps {
 
 export default function ProjectTile({ project, reversed = false }: ProjectTileProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  // 'wide' stacks two full-width images in the space the 2x2 grid uses.
+  // 'wide' stacks two full-width images at their natural aspect ratio, uncropped.
   const wide = project.imageLayout === 'wide';
   const images = project.imageUrls.slice(0, wide ? 2 : 4);
+  const mediaClass = wide ? 'w-full h-auto rounded-lg' : 'w-full h-full object-cover rounded-lg';
 
   return (
     <article
@@ -21,14 +22,14 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
         flex flex-col lg:flex-row"
     >
       {/* Images */}
-      <div className={`lg:w-1/2 bg-[#171717] p-4 grid grid-cols-2 gap-3 min-h-64 sm:min-h-72 ${reversed ? 'lg:order-2' : ''}`}>
+      <div className={`lg:w-1/2 bg-[#171717] p-4 grid grid-cols-2 gap-3 min-h-64 sm:min-h-72 ${wide ? 'content-center' : ''} ${reversed ? 'lg:order-2' : ''}`}>
         {images.map((src, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setLightboxIndex(i)}
             aria-label={`View larger: ${project.title} image ${i + 1}`}
-            className={`block w-full h-full ${wide ? 'col-span-2 aspect-[2/1]' : 'aspect-square'} cursor-zoom-in overflow-hidden rounded-lg
+            className={`block w-full ${wide ? 'col-span-2' : 'h-full aspect-square'} cursor-zoom-in overflow-hidden rounded-lg
               border border-neutral-800 hover:border-white/30 transition-colors duration-200
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40`}
           >
@@ -41,13 +42,13 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
                 loop
                 playsInline
                 preload="metadata"
-                className="w-full h-full object-cover rounded-lg"
+                className={mediaClass}
               />
             ) : (
               <img
                 src={src}
                 alt={`${project.title} ${i + 1}`}
-                className="w-full h-full object-cover rounded-lg"
+                className={mediaClass}
               />
             )}
           </button>
