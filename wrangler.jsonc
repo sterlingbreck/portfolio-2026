@@ -1,0 +1,13 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Static site (npm run build → dist). Workers Builds runs `wrangler deploy` on
+	// main and `wrangler versions upload` on other branches; both need this file.
+	// The contact form API is a separate worker: worker/wrangler.jsonc.
+	"name": "sterling-breckenridge",
+	"compatibility_date": "2026-10-09",
+	"assets": {
+		"directory": "./dist",
+		"not_found_handling": "single-page-application"
+	},
+	"observability": { "enabled": true }
+}
