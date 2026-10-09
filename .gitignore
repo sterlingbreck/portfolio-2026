@@ -26,3 +26,7 @@ dist-ssr
 # Cloudflare worker
 worker/.dev.vars
 .wrangler
+
+# Hero video workspace
+hero-video/node_modules
+hero-video/out

@@ -1,0 +1,27 @@
+{
+  "name": "hero-video",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-tags.mjs",
+    "studio": "remotion studio",
+    "typecheck": "tsc --noEmit",
+    "encode": "bash scripts/encode.sh",
+    "verify": "bash scripts/verify-loop.sh"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "@remotion/fonts": "4.0.534",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@fontsource-variable/geist-mono": "^5.2.0",
+    "@types/react": "^19.2.0",
+    "puppeteer-core": "^24.43.1",
+    "sharp": "^0.34.0",
+    "typescript": "~6.0.2"
+  }
+}
