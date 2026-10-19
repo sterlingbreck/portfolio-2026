@@ -1,5 +1,6 @@
 import { nodePos } from "../geometry/nodes";
 import { osc, r2, saw, usePhase } from "../loop";
+import { BG, ON_WAVE } from "./colors";
 
 /** Pointy-top hexagon centred on 0,0. */
 const hex = (r: number) => {
@@ -21,30 +22,30 @@ export const HexIcons = ({ layer }: { layer: "under" | "over" }) => {
   };
 
   if (layer === "over") {
-    // Shield sits on the orange wave.
+    // Shield sits on the orange wave (or, without it, straight on BG).
     const pulse = saw(phase, 2, 0.3);
     return (
       <g transform={at("hx3")}>
-        <path d={hex(29)} fill="none" stroke="#ffffff" strokeWidth={0.8} opacity={0.85} />
+        <path d={hex(29)} fill="none" stroke={ON_WAVE} strokeWidth={0.8} opacity={0.85} />
         <path
           d={hex(29 * (1 + 0.32 * pulse))}
           fill="none"
-          stroke="#ffffff"
+          stroke={ON_WAVE}
           strokeWidth={0.5}
           opacity={r2(0.45 * (1 - pulse))}
         />
-        <path d={SHIELD} fill="none" stroke="#ffffff" strokeWidth={0.8} opacity={0.35} />
+        <path d={SHIELD} fill="none" stroke={ON_WAVE} strokeWidth={0.8} opacity={0.35} />
         <path
           d={SHIELD}
           fill="none"
-          stroke="#ffffff"
+          stroke={ON_WAVE}
           strokeWidth={0.95}
           strokeLinejoin="round"
           pathLength={100}
           strokeDasharray="62 38"
           strokeDashoffset={r2(-100 * phase)}
         />
-        <path d="M-3.4 0.2L0 3.2L3.4 0.2M0 3.2V-2.6" fill="none" stroke="#ffffff" strokeWidth={0.8} strokeLinecap="round" />
+        <path d="M-3.4 0.2L0 3.2L3.4 0.2M0 3.2V-2.6" fill="none" stroke={ON_WAVE} strokeWidth={0.8} strokeLinecap="round" />
       </g>
     );
   }
@@ -62,7 +63,7 @@ export const HexIcons = ({ layer }: { layer: "under" | "over" }) => {
 
       {/* Stacked layers */}
       <g transform={at("hx1")}>
-        <path d={hex(29)} fill="#f6f3f1" stroke="#f26b1d" strokeWidth={0.8} />
+        <path d={hex(29)} fill={BG} stroke="#f26b1d" strokeWidth={0.8} />
         <g transform={`translate(0 ${r2(-gap * 0.35)})`}>
           <path d={`M-9 ${r2(gap)}L0 ${r2(gap + 4.6)}L9 ${r2(gap)}`} fill="none" stroke="#f26b1d" strokeWidth={1.3} strokeLinejoin="round" />
           <path d={`M-9 ${r2(gap / 2)}L0 ${r2(gap / 2 + 4.6)}L9 ${r2(gap / 2)}`} fill="none" stroke="#f26b1d" strokeWidth={1.3} strokeLinejoin="round" />
@@ -72,7 +73,7 @@ export const HexIcons = ({ layer }: { layer: "under" | "over" }) => {
 
       {/* Wireframe cube */}
       <g transform={at("hx2")}>
-        <path d={hex(19)} fill="#f6f3f1" stroke="#eba27a" strokeWidth={0.55} />
+        <path d={hex(19)} fill={BG} stroke="#eba27a" strokeWidth={0.55} />
         <g transform={`rotate(${r2(cubeRot)})`} stroke="#eb8c57" strokeWidth={0.55} fill="none">
           <path d={hex(8.5)} />
           {[90, 210, 330].map((deg) => {

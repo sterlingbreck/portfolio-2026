@@ -199,7 +199,7 @@ export const Component = () => {
   );
 
   return (
-    <section ref={containerRef} style={toothMask} className="relative z-10 min-h-[30vh] md:min-h-[72vh] w-full bg-[#f6f3f1] flex flex-col selection:bg-black selection:text-white overflow-hidden">
+    <section ref={containerRef} style={toothMask} className="relative z-10 min-h-[30vh] md:min-h-[72vh] w-full bg-sand flex flex-col selection:bg-black selection:text-white overflow-hidden">
       {isWide && (
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div ref={imageRef} className="absolute bottom-0 left-0 w-full aspect-[3/1] select-none" style={fadeTop('18%')}>

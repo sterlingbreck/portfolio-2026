@@ -1,6 +1,7 @@
 import { EDGES, NODES, PACKETS, SWEEPS, type NetNode } from "../data/network";
 import { NODE_BY_ID, nodePos } from "../geometry/nodes";
 import { TAU, hash, r2, saw, usePhase } from "../loop";
+import { BG, ON_WAVE, SHOW_WAVE } from "./colors";
 
 // Nodes/edges that sit on or below the orange wave are drawn above it.
 const OVER_NODES = new Set(["n53", "n54", "n55", "n56", "n58", "n59"]);
@@ -10,7 +11,7 @@ const isOverEdge = ([a, b, tone]: (typeof EDGES)[number]) =>
 const EDGE_STYLE = {
   o: { stroke: "#ee7036", opacity: 0.55, width: 0.45 },
   f: { stroke: "#ee7f42", opacity: 0.28, width: 0.4 },
-  w: { stroke: "#ffffff", opacity: 0.6, width: 0.5 },
+  w: SHOW_WAVE ? { stroke: "#ffffff", opacity: 0.6, width: 0.5 } : { stroke: "#ee7036", opacity: 0.55, width: 0.45 },
 } as const;
 
 const NodeMark = ({ n, x, y, phase }: { n: NetNode; x: number; y: number; phase: number }) => {
@@ -22,11 +23,11 @@ const NodeMark = ({ n, x, y, phase }: { n: NetNode; x: number; y: number; phase:
     case "black":
       return <circle cx={x} cy={y} r={n.r} fill="#1b1b1b" />;
     case "white":
-      return <circle cx={x} cy={y} r={n.r} fill="#ffffff" />;
+      return <circle cx={x} cy={y} r={n.r} fill={ON_WAVE} />;
     case "ring":
-      return <circle cx={x} cy={y} r={n.r} fill="#f6f3f1" stroke="#f26b1d" strokeWidth={0.7} />;
+      return <circle cx={x} cy={y} r={n.r} fill={BG} stroke="#f26b1d" strokeWidth={0.7} />;
     case "ringDark":
-      return <circle cx={x} cy={y} r={n.r} fill="#f6f3f1" stroke="#1b1b1b" strokeWidth={0.7} />;
+      return <circle cx={x} cy={y} r={n.r} fill={BG} stroke="#1b1b1b" strokeWidth={0.7} />;
     case "square": {
       // a square is 90°-symmetric, so a quarter turn per loop is seamless
       const rot = 90 * phase;
@@ -110,7 +111,7 @@ export const Network = ({ layer }: { layer: "under" | "over" }) => {
             cx={r2(x1 + (x2 - x1) * t)}
             cy={r2(y1 + (y2 - y1) * t)}
             r={0.95}
-            fill={white ? "#ffffff" : "#f05a0a"}
+            fill={white && SHOW_WAVE ? "#ffffff" : "#f05a0a"}
             opacity={r2(Math.sin(Math.PI * t) * 0.95)}
           />
         );
@@ -138,7 +139,7 @@ export const PulseRing = ({ id, strength, tone }: { id: string; strength: number
       cy={r2(y)}
       r={r2(base + 7 * t)}
       fill="none"
-      stroke={tone === "light" ? "#ffffff" : "#f26b1d"}
+      stroke={tone === "light" ? ON_WAVE : "#f26b1d"}
       strokeWidth={0.5}
       opacity={r2((1 - t) * 0.7 * strength)}
     />

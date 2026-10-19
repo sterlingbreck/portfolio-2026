@@ -47,6 +47,8 @@ function ProjectStatus({ project }: { project: Project }) {
   return <span className={`${tabClass} text-white/40`}>{label}</span>;
 }
 
+const glow = 'shadow-[0_2px_6px_rgba(0,0,0,0.06),0_16px_48px_rgba(160,82,10,0.28)]';
+
 export default function ProjectTile({ project, reversed = false }: ProjectTileProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   // 'wide' stacks two full-width images at their natural aspect ratio, uncropped.
@@ -55,9 +57,23 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
   const mediaClass = wide ? 'w-full h-auto rounded-lg' : 'w-full h-full object-cover rounded-lg';
 
   return (
-    // The article isn't clipped, so the status tab can hang below its bottom edge; the inner wrapper clips the columns.
-    <article className="relative rounded-2xl shadow-[0_2px_6px_rgba(0,0,0,0.06),0_16px_48px_rgba(160,82,10,0.28)]">
-      <div className="rounded-2xl bg-[#171717] overflow-hidden flex flex-col lg:flex-row">
+    // The article holds the title tab, the tile body and the status tab. It isn't clipped, so the status tab can
+    // hang below the body; the body clips its columns. The glow is on the tab and body, not the article's empty corner.
+    <article className="relative flex flex-col">
+      {/* Title tab on the top left: same dark as the body, rounded top, flat bottom flush with it. */}
+      <h3
+        className={`${glow} self-start max-w-[calc(100%-3rem)] ml-6 sm:ml-8 rounded-t-xl bg-[#171717] px-5 pt-3 pb-1
+          font-display text-xl sm:text-2xl lg:text-3xl text-[#f6f3f1] leading-tight`}
+      >
+        {project.title}
+        {project.titleNote && (
+          <>{' '}<span className="ml-2 align-middle text-xs sm:text-sm font-body uppercase tracking-[0.15em] text-white/50">
+            {project.titleNote}
+          </span></>
+        )}
+      </h3>
+
+      <div className={`${glow} relative rounded-2xl bg-[#171717] overflow-hidden flex flex-col lg:flex-row`}>
         {/* Images */}
         {/* 2rem wider than 6/11, taken from the text column's inner padding (see Content), so the images gain width and the text keeps its own. */}
         <div className={`lg:w-[calc(600%/11+2rem)] bg-[#171717] p-4 grid grid-cols-2 gap-3 content-center min-h-64 sm:min-h-72 ${reversed ? 'lg:order-2' : ''}`}>
@@ -97,15 +113,6 @@ export default function ProjectTile({ project, reversed = false }: ProjectTilePr
         {/* Padding on the side facing the images is 1rem (not 3rem), keeping the gap to the images tight. */}
         {/* Tighter top on mobile, where it follows the images directly. */}
         <div className={`lg:w-[calc(500%/11-2rem)] bg-[#171717] p-6 pt-4 sm:p-8 sm:pt-6 lg:px-12 lg:py-8 flex flex-col justify-center ${reversed ? 'lg:order-1 lg:pr-4' : 'lg:pl-4'}`}>
-          <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl text-white leading-tight mb-4">
-            {project.title}
-            {project.titleNote && (
-              <>{' '}<span className="ml-2 align-middle text-xs sm:text-sm font-body uppercase tracking-[0.15em] text-white/50">
-                {project.titleNote}
-              </span></>
-            )}
-          </h3>
-
           <p className="font-body text-sm sm:text-base text-white/60 leading-relaxed mb-6">
             {project.description}
           </p>

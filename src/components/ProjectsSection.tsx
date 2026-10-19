@@ -69,7 +69,7 @@ export default function ProjectsSection() {
         </p>
 
         {/* Wider than the tiles need on their own, to leave room for the status tab hanging under each. */}
-        <div ref={listRef} className="space-y-14 lg:space-y-16">
+        <div ref={listRef} className="space-y-9 lg:space-y-11">
           {projects.map((project, index) => (
             <div key={project.id} data-parallax>
               <ProjectTile

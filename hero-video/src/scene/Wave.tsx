@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { between, bandPath, smoothPath } from "../geometry/wave";
 import { TAU, r2, usePhase } from "../loop";
+import { BG, DARK, mix } from "./colors";
 
 // Curve-following gradients are built by stacking bands [s, 1] (or [0, s])
 // back to front: every band is fully covered by the next except its own
@@ -29,27 +30,31 @@ const ramp = (stops: [number, string][], n: number): [number, string][] => {
   });
 };
 
+// The halos either side of the black edges fade from the background into DARK. The second number
+// in each stop is how far from BG to DARK it sits (matching the original greys on #f6f3f1).
+const halo = (stops: [number, number][]): [number, string][] => stops.map(([s, t]) => [s, mix(BG, DARK, t)]);
+
 const UPPER_STRIPS = ramp(
-  [
-    [0, "#efecea"],
-    [0.08, "#d6d4d2"],
-    [0.18, "#a3a2a1"],
-    [0.28, "#666565"],
-    [0.4, "#333333"],
-    [0.6, "#232323"],
-    [1, "#1b1b1b"],
-  ],
+  halo([
+    [0, 0.03],
+    [0.08, 0.14],
+    [0.18, 0.38],
+    [0.28, 0.66],
+    [0.4, 0.89],
+    [0.6, 0.96],
+    [1, 1],
+  ]),
   22,
 );
 
 const LOWER_STRIPS = ramp(
-  [
-    [0, "#1c1c1c"],
-    [0.5, "#222222"],
-    [0.68, "#3f3f3f"],
-    [0.84, "#8f8e8d"],
-    [1, "#e2e0de"],
-  ],
+  halo([
+    [0, 1],
+    [0.5, 0.97],
+    [0.68, 0.83],
+    [0.84, 0.51],
+    [1, 0.08],
+  ]),
   16,
 );
 

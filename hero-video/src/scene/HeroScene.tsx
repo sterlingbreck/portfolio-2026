@@ -7,14 +7,13 @@ import { HexIcons } from "./HexIcons";
 import { Network } from "./Network";
 import { ProjectTitle, SkillLabels } from "./SkillLabels";
 import { Wave, WaveDefs } from "./Wave";
+import { BG, SHOW_WAVE } from "./colors";
 
 export type HeroSceneProps = {
   readonly layout: "wide" | "mobile";
   /** Studio only: overlays the reference banner and headline safe zones. */
   readonly debug: boolean;
 };
-
-export const BG = "#f6f3f1";
 
 export const HeroScene = ({ layout, debug }: HeroSceneProps) => {
   const phase = usePhase();
@@ -38,9 +37,9 @@ export const HeroScene = ({ layout, debug }: HeroSceneProps) => {
         <Network layer="under" />
         <HexIcons layer="under" />
 
-        <Wave />
+        {SHOW_WAVE && <Wave />}
 
-        <DotGrid x={1127} y={281} cols={8} rows={4} gap={7} color="#ffffff" opacity={0.7} />
+        <DotGrid x={1127} y={281} cols={8} rows={4} gap={7} color={SHOW_WAVE ? "#ffffff" : "#ef9a6a"} opacity={0.7} />
         <Network layer="over" />
         <HexIcons layer="over" />
 

@@ -4,6 +4,7 @@ import { nodePos } from "../geometry/nodes";
 import type { Align, LabelSlot, Layout, Tone } from "../layouts";
 import { LOOP, clamp01, easeInOut, easeOut, r2, strHash, hash } from "../loop";
 import { PulseRing } from "./Network";
+import { SHOW_WAVE } from "./colors";
 
 export const CHAPTER_FRAMES = LOOP / CHAPTERS.length; // 150 = 5 s
 // Frame 0 lands mid-HumTalk with every label already typed in, so the
@@ -27,9 +28,12 @@ export const chapterAt = (frame: number) => {
   return { index, u: g - index * CHAPTER_FRAMES };
 };
 
-const TONES: Record<Tone, { text: string; textOpacity: number; lead: string; leadOpacity: number }> = {
-  dark: { text: "#171717", textOpacity: 0.66, lead: "#ef6a1f", leadOpacity: 0.8 },
-  light: { text: "#ffffff", textOpacity: 0.96, lead: "#ffffff", leadOpacity: 0.8 },
+type ToneStyle = { text: string; textOpacity: number; lead: string; leadOpacity: number; cursor: string };
+const DARK_TONE: ToneStyle = { text: "#171717", textOpacity: 0.66, lead: "#ef6a1f", leadOpacity: 0.8, cursor: "#ef6a1f" };
+// "light" labels sit on the wave; without it they read like every other label.
+const TONES: Record<Tone, ToneStyle> = {
+  dark: DARK_TONE,
+  light: SHOW_WAVE ? { text: "#ffffff", textOpacity: 0.96, lead: "#ffffff", leadOpacity: 0.8, cursor: "#ffffff" } : DARK_TONE,
 };
 
 type LabelProps = {
@@ -131,7 +135,7 @@ const Label = ({ slot, text, seed, fontSize, enter, exit, phase }: LabelProps) =
           y={r2(ay - fontSize * 0.74)}
           width={r2(fontSize * ADVANCE * 0.9)}
           height={r2(fontSize * 0.86)}
-          fill={slot.tone === "light" ? "#ffffff" : "#ef6a1f"}
+          fill={TONES[slot.tone].cursor}
           opacity={0.85}
         />
       )}
