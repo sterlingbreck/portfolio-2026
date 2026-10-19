@@ -14,26 +14,26 @@ function img(name: string): string {
 
 export const projects: Project[] = [
   {
-    id: 'project-1',
-    title: 'HumTalk',
+    id: 'project-rallybook',
+    title: 'Rallybook',
     description:
-      'Browser-based voice and video application — start a call and anyone can join from a link, with nothing to install and no phone plan needed. Supports one-on-one calls and groups of up to 100 people, with switching between voice and video mid-call. Includes screen sharing, live captions, breakout rooms, recording with transcripts, and waiting rooms.',
+      'Court booking and payments for tennis and pickleball clubs, with agentic helpers for players and the front desk. Players hold a court while they pay, split the cost by link, and manage bookings from any device. A voice and chat concierge books, changes, and cancels courts by talking or typing, reading back the price before anything is charged. Staff get a live court board, payments and refunds, members, reports, and a guided setup for new clubs.',
     // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Realtime Video', 'Realtime Audio', 'Claude Code',
+      'Agentic AI', 'Voice Concierge', 'Claude Code',
       'Cloudflare Wrangler CLI', 'Cloudflare D1 SQLite',
-      'Cloudflare Workers', 'TypeScript', 'JavaScript',
-      'Screen Sharing', 'Cloudflare Durable Objects',
-      'Live Captions', 'Architecture', 'Cloudflare KV',
-      'GitHub CI', 'Automation', 'Performance Tuning',
+      'Cloudflare Workers', 'TypeScript', 'React 19',
+      'Speech Recognition', 'Next.js on Vite',
+      'Payments', 'Architecture', 'Tailwind CSS',
+      'Product Design', 'Automation', 'Booking Systems',
     ],
     imageUrls: [
-      img('projects-hum-1.png'),
-      img('projects-hum-4.png'),
+      img('projects-rally-booking.png'),
+      img('projects-rally-payments.png'),
     ],
     imageLayout: 'wide',
     projectLinkLabel: 'In Development',
-    year: 'CDN Backend Architecture + Full-Stack Development + Design',
+    year: 'Agentic Product Design + Full-Stack Development + Design',
   },
   {
     id: 'project-2',
@@ -58,6 +58,28 @@ export const projects: Project[] = [
     ],
     projectLinkLabel: 'In Development',
     year: 'Open Source Contributor + CDN Backend Architecture + Full-Stack Development + Design',
+  },
+  {
+    id: 'project-1',
+    title: 'HumTalk',
+    description:
+      'Browser-based voice and video application — start a call and anyone can join from a link, with nothing to install and no phone plan needed. Supports one-on-one calls and groups of up to 100 people, with switching between voice and video mid-call. Includes screen sharing, live captions, breakout rooms, recording with transcripts, and waiting rooms.',
+    // Ordered so each row fills the tag column evenly at desktop width.
+    tags: [
+      'Realtime Video', 'Realtime Audio', 'Claude Code',
+      'Cloudflare Wrangler CLI', 'Cloudflare D1 SQLite',
+      'Cloudflare Workers', 'TypeScript', 'JavaScript',
+      'Screen Sharing', 'Cloudflare Durable Objects',
+      'Live Captions', 'Architecture', 'Cloudflare KV',
+      'GitHub CI', 'Automation', 'Performance Tuning',
+    ],
+    imageUrls: [
+      img('projects-hum-1.png'),
+      img('projects-hum-4.png'),
+    ],
+    imageLayout: 'wide',
+    projectLinkLabel: 'In Development',
+    year: 'CDN Backend Architecture + Full-Stack Development + Design',
   },
   {
     id: 'project-3',

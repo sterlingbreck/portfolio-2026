@@ -1,80 +1,21 @@
 "use client";
 
-import { useRef, useEffect, useState, useSyncExternalStore } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-// Seamless 20s loop rendered from /hero-video (Remotion). Frame 0 doubles as the poster.
-import heroWideMp4 from '../../assets/hero/hero-wide.mp4';
-import heroWideWebm from '../../assets/hero/hero-wide.webm';
-import heroWidePoster from '../../assets/hero/hero-wide-poster.webp';
-import heroMobileMp4 from '../../assets/hero/hero-mobile.mp4';
-import heroMobileWebm from '../../assets/hero/hero-mobile.webm';
-import heroMobilePoster from '../../assets/hero/hero-mobile-poster.webp';
+import { useMediaQuery } from '../../lib/useMediaQuery';
+// Static hero art: frame 0 of the Remotion loop in /hero-video.
+import heroWide from '../../assets/hero/hero-wide-poster.webp';
+import heroMobile from '../../assets/hero/hero-mobile-poster.webp';
 
-const useMediaQuery = (query: string) =>
-  useSyncExternalStore(
-    (onChange) => {
-      const mql = window.matchMedia(query);
-      mql.addEventListener('change', onChange);
-      return () => mql.removeEventListener('change', onChange);
-    },
-    () => window.matchMedia(query).matches,
-    () => false,
-  );
-
-const HERO_MEDIA = {
-  wide: { mp4: heroWideMp4, webm: heroWideWebm, poster: heroWidePoster },
-  mobile: { mp4: heroMobileMp4, webm: heroMobileWebm, poster: heroMobilePoster },
-};
-
-/** Looping hero video over its frame-0 poster. The poster stays visible under
- *  reduced motion, before playback starts, or if autoplay is blocked. */
-const HeroVideo = ({ variant }: { variant: keyof typeof HERO_MEDIA }) => {
-  const media = HERO_MEDIA[variant];
-  const reducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
-
-  // Pause the loop while the hero is scrolled out of view.
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) video.play().catch(() => {});
-      else video.pause();
-    });
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, [reducedMotion, variant]);
-
-  return (
-    <>
-      <img
-        src={media.poster}
-        alt=""
-        aria-hidden
-        fetchPriority="high"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      {!reducedMotion && (
-        <video
-          key={variant}
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden
-          onPlaying={() => setPlaying(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${playing ? 'opacity-100' : 'opacity-0'}`}
-        >
-          <source src={media.webm} type="video/webm" />
-          <source src={media.mp4} type="video/mp4" />
-        </video>
-      )}
-    </>
-  );
-};
+const HeroImage = ({ src }: { src: string }) => (
+  <img
+    src={src}
+    alt=""
+    aria-hidden
+    fetchPriority="high"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+);
 
 const fadeTop = (stop: string) => ({
   maskImage: `linear-gradient(to bottom, transparent, black ${stop})`,
@@ -85,8 +26,8 @@ export const Component = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const revealRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
-  // Desktop: 3:1 loop behind the headline. Mobile: 4:3 loop below it, so the
-  // stacked text never covers the skill labels. Only one video is loaded.
+  // Desktop: 3:1 image behind the headline. Mobile: 4:3 image below it, so the
+  // stacked text never covers the skill labels. Only one image is loaded.
   const isWide = useMediaQuery('(min-width: 768px)');
 
   useEffect(() => {
@@ -117,7 +58,7 @@ export const Component = () => {
       {isWide && (
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute bottom-0 left-0 w-full aspect-[3/1] select-none" style={fadeTop('18%')}>
-            <HeroVideo variant="wide" />
+            <HeroImage src={heroWide} />
           </div>
         </div>
       )}
@@ -144,15 +85,16 @@ export const Component = () => {
                 Developer, Technical Project Manager, Creative, AI enthusiast, Scrum Master, Skill Stacker
               </p>
 
+              {/* My Work CTA, hidden for now. Restore by uncommenting (ctaRef + magnet effect are still wired up).
               <a ref={ctaRef} href="#work" className="w-fit flex items-center gap-6 group shrink-0 no-underline">
                  <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center group-hover:bg-orange-500 transition-all duration-500 overflow-hidden">
-                    {/* Fixed: Professional SVG arrow replaces broken character */}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-90 stroke-white transition-colors duration-500">
                       <path d="M7 17L17 7M17 7H8M17 7V16" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                  </div>
                  <span className="font-mono text-[11px] font-bold text-neutral-900 uppercase tracking-[0.2em]">My Work</span>
               </a>
+              */}
             </div>
           </div>
         </div>
@@ -164,7 +106,7 @@ export const Component = () => {
 
       {!isWide && (
         <div className="relative -mt-10 w-full aspect-[4/3] pointer-events-none select-none" style={fadeTop('10%')}>
-          <HeroVideo variant="mobile" />
+          <HeroImage src={heroMobile} />
         </div>
       )}
     </section>
