@@ -21,24 +21,23 @@ export const projects: Project[] = [
     // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
       'Agentic AI', 'Voice Concierge', 'Claude Code',
-      'Cloudflare Wrangler CLI', 'Cloudflare D1 SQLite',
-      'Cloudflare Workers', 'TypeScript', 'React 19',
-      'Speech Recognition', 'Next.js on Vite',
-      'Payments', 'Architecture', 'Tailwind CSS',
-      'Product Design', 'Automation', 'Booking Systems',
+      'Cloudflare D1 SQLite', 'Cloudflare Workers',
+      'TypeScript', 'Next.js on Vite', 'Product Design',
+      'Speech Recognition', 'Payments', 'Tailwind CSS',
+      'Architecture', 'Automation', 'Booking Systems',
     ],
     imageUrls: [
-      img('projects-rally-booking.png'),
+      img('projects-rally-hero.png'),
+      img('projects-rally-agent.png'),
       img('projects-rally-payments.png'),
+      img('projects-rally-reports.png'),
     ],
-    imageLayout: 'wide',
     projectLinkLabel: 'In Development',
-    year: 'Agentic Product Design + Full-Stack Development + Design',
+    year: 'Business Application + Full-Stack Development + Design + CDN Integration',
   },
   {
     id: 'project-2',
     title: 'OBL',
-    titleNote: '(Active Production)',
     description:
       'Every code commit is represented in dynamic ways across this multiplayer island world. Created to support open source development and learning, powered by realtime data.  User can speak and interact in realtime while exploring lands and projects built by other open source contributors.',
     // Ordered so each row fills the tag column evenly at desktop width.
@@ -56,7 +55,7 @@ export const projects: Project[] = [
       img('projects-ooga-3.png'),
       img('projects-ooga-4.png'),
     ],
-    projectLinkLabel: 'In Development',
+    projectUrl: 'https://oogabooga.land/',
     year: 'Open Source Contributor + CDN Backend Architecture + Full-Stack Development + Design',
   },
   {
@@ -75,9 +74,10 @@ export const projects: Project[] = [
     ],
     imageUrls: [
       img('projects-hum-1.png'),
+      img('projects-hum-2.png'),
+      img('projects-hum-3.png'),
       img('projects-hum-4.png'),
     ],
-    imageLayout: 'wide',
     projectLinkLabel: 'In Development',
     year: 'CDN Backend Architecture + Full-Stack Development + Design',
   },

@@ -30,34 +30,56 @@ export default function ProjectsSection() {
           }
         );
       });
+
+      // Parallax: each tile's wrapper drifts from slightly below to slightly above its spot as
+      // it crosses the viewport, so the tiles float against the lattice. Alternating tiles drift
+      // by different amounts for a little depth. On the wrapper so it doesn't fight the reveal's y.
+      gsap.utils.toArray<HTMLElement>('[data-parallax]').forEach((layer, i) => {
+        const drift = i % 2 ? 120 : 72;
+        gsap.fromTo(
+          layer,
+          { y: drift },
+          {
+            y: -drift,
+            ease: 'none',
+            scrollTrigger: { trigger: layer, start: 'top bottom', end: 'bottom top', scrub: true },
+          }
+        );
+      });
     }, listRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section
-      id="work"
-      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
-      style={{ paddingTop: 'clamp(3rem, 8vw, 6rem)', paddingBottom: 'clamp(3rem, 8vw, 6rem)' }}
-    >
-      <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-accent tracking-tight mb-4">
-        My Work
-      </h2>
-      
-      <p className="font-body text-text-muted text-base sm:text-lg mb-12 lg:mb-16 max-w-xl">
-        A collection of projects spanning development, CDN performance/security, brand identity, print and digital design, CMS integrations, customer success, and technical project management.
-      </p>
-      
-      <div ref={listRef} className="space-y-8 lg:space-y-12">
-        {projects.map((project, index) => (
-          <ProjectTile
-            key={project.id}
-            project={project}
-            reversed={index % 2 !== 0}
-          />
-        ))}
-      </div>
-    </section>
+    // Pulled up under the hero's jagged bottom edge (TOOTH_H in experience-hero), padded back so content doesn't move.
+    <div className="relative isolate bg-sand -mt-[15px] pt-[15px]">
+      <div aria-hidden="true" className="lattice" />
+      <section
+        id="work"
+        className="max-w-[79.2rem] mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ paddingTop: 'clamp(3rem, 8vw, 6rem)', paddingBottom: 'clamp(3rem, 8vw, 6rem)' }}
+      >
+        <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-accent tracking-tight mb-4">
+          My Work
+        </h2>
+
+        <p className="font-body text-text-muted text-base sm:text-lg mb-12 lg:mb-16 max-w-xl">
+          A collection of projects spanning development, CDN performance/security, brand identity, print and digital design, CMS integrations, customer success, and technical project management.
+        </p>
+
+        {/* Wider than the tiles need on their own, to leave room for the status tab hanging under each. */}
+        <div ref={listRef} className="space-y-14 lg:space-y-16">
+          {projects.map((project, index) => (
+            <div key={project.id} data-parallax>
+              <ProjectTile
+                project={project}
+                reversed={index % 2 !== 0}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
