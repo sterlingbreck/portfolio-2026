@@ -101,9 +101,9 @@ const HERO_SKILLS = [
   'Professional Services',
   'Open Source Contributor',
   'AI Solutions',
-  'Cloudflare Integration',
+  'Cloudflare Integrations',
   'Scrum Master',
-  'Skill Stacker',
+  'Anthropic Ecosystem',
 ];
 
 export const Component = () => {
