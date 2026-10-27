@@ -16,7 +16,7 @@ const svg = `
   <rect width="${WIDTH}" height="${HEIGHT}" fill="#0a0a0a" />
   <rect x="100" y="252" width="72" height="2" fill="#666666" />
   <text x="100" y="332" font-family="Georgia, 'Times New Roman', serif" font-size="76" letter-spacing="2" fill="#f5f5f5">STERLING BRECKENRIDGE</text>
-  <text x="100" y="400" font-family="Helvetica, Arial, sans-serif" font-size="30" letter-spacing="1" fill="#a3a3a3">Developer&#160;&#160;·&#160;&#160;Technical Project Manager</text>
+  <text x="100" y="400" font-family="Helvetica, Arial, sans-serif" font-size="30" letter-spacing="1" fill="#a3a3a3">Founder&#160;&#160;·&#160;&#160;AI Solutions&#160;&#160;·&#160;&#160;CDN Professional Services&#160;&#160;·&#160;&#160;Fullstack Dev</text>
   <text x="100" y="548" font-family="Helvetica, Arial, sans-serif" font-size="21" letter-spacing="1" fill="#666666">Nissan&#160;&#160;·&#160;&#160;Capital Group&#160;&#160;·&#160;&#160;Akamai&#160;&#160;·&#160;&#160;Accenture</text>
   <text x="1100" y="548" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="21" letter-spacing="1" fill="#666666">nyk-nyc.com</text>
 </svg>`;
