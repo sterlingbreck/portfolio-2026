@@ -99,7 +99,7 @@ const HERO_SKILLS = [
   'Fullstack Developer',
   'Technical Project Manager',
   'Professional Services',
-  'Open Source Maintainer',
+  'Open Source Contributor',
   'AI Solutions',
   'Cloudflare Integration',
   'Scrum Master',
