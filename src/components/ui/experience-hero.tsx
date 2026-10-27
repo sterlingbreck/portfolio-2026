@@ -96,14 +96,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HERO_SKILLS = [
   'Founder',
-  'Fullstack Developer',
-  'Technical Project Manager',
-  'Professional Services',
-  'Open Source Contributor',
   'AI Solutions',
-  'Cloudflare Integrations',
-  'Scrum Master',
   'Anthropic Ecosystem',
+  'Professional Services',
+  'Cloudflare Integrations',
+  'Fullstack Developer',
+  'Open Source Contributor',
+  'Technical Project Manager',
+  'Scrum Master',
 ];
 
 export const Component = () => {
