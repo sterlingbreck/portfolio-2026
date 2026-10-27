@@ -42,10 +42,10 @@ export const projects: Project[] = [
       'Every code commit is represented in dynamic ways across this multiplayer island world. Created to support open source development and learning, powered by realtime data.  User can speak and interact in realtime while exploring lands and projects built by other open source contributors.',
     // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'GitHub CI', 'Cloudflare Durable Objects', 'Three.js',
+      'Cloudflare Durable Objects', 'GitHub CI', 'Three.js',
       'Streaming Audio', 'GraphQL', 'Performance Tuning',
-      'Cloudflare D1', 'Claude Code', 'Cloudflare Access',
-      'Web-based games', 'Cloudflare KV', 'Architecture',
+      'Architecture', 'Cloudflare D1', 'Cloudflare Access',
+      'Web-based games', 'Cloudflare KV', 'Claude Code',
       'GitHub oAuth', 'WebGL2', 'CRON Jobs', 'JavaScript',
       'Automation', 'Cloudflare Workers', 'Wrangler CLI',
     ],
@@ -66,11 +66,11 @@ export const projects: Project[] = [
     // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
       'Realtime Video', 'Realtime Audio', 'Claude Code',
-      'Cloudflare Wrangler CLI', 'Cloudflare D1 SQLite',
-      'Cloudflare Workers', 'TypeScript', 'JavaScript',
-      'Screen Sharing', 'Cloudflare Durable Objects',
-      'Live Captions', 'Architecture', 'Cloudflare KV',
-      'GitHub CI', 'Automation', 'Performance Tuning',
+      'Cloudflare D1 SQLite', 'Cloudflare Wrangler CLI',
+      'TypeScript', 'Cloudflare Workers', 'JavaScript',
+      'Screen Sharing', 'Live Captions', 'GitHub CI',
+      'Cloudflare Durable Objects', 'Architecture',
+      'Cloudflare KV', 'Automation', 'Performance Tuning',
     ],
     imageUrls: [
       img('projects-hum-1.png'),
@@ -86,21 +86,14 @@ export const projects: Project[] = [
     title: 'Bitcoin Video Magazine',
     description:
       'Bitcoin Video Magazine is something new and TOTALLY DIFFERENT from anything which has ever lived in the Bitcoin media space, before. BVM will take you on a fun, educational, and inspirational journey around the world of Bitcoin and the Plebs #BUIDLing on it and supporting a Bitcoin Standard.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'CDN Content Development',
-      'Automation', 'CRON Jobs',
-      'Solutions Engineering',
-      'Application Development',
-      'UGC Content',
-      'Print + Web Design',
-      'NextJS', 'TypeScript', 
-      'Claude Code',
-      'Tailwind CSS',
-      'Cloudflare Workers',
-      'Cloudflare D1 + R2',
-      'Cloudflare AI Workers',
-      'Cloudflare Wrangler CLI',
-      
+      'CDN Content Development', 'Automation', 'CRON Jobs',
+      'Solutions Engineering', 'Application Development',
+      'NextJS', 'UGC Content', 'Print + Web Design',
+      'Claude Code', 'Cloudflare Workers', 'TypeScript',
+      'Cloudflare AI Workers', 'Tailwind CSS',
+      'Cloudflare D1 + R2', 'Cloudflare Wrangler CLI',
     ],
     imageUrls: [
       img('projects-bvm-7.png'),
@@ -117,18 +110,14 @@ export const projects: Project[] = [
     title: 'AI Product Try-On Generator',
     description:
       'An AI-powered virtual try-on tool that lets shoppers preview how a garment looks on a real person before buying. Upload a photo of a person and a flat product shot of a shirt, and the app generates a realistic preview of them wearing it — preserving pose, body shape, and lighting — in a few seconds.  Built entirely on the Cloudflare edge platform.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Application Development',
-      'AI Image Generation',
-      'Image Compression',
-      'SAAS Development',
-      'TypeScript',
-      'NextJS', 'Claude Code','GIT CI',
-      'Wrangler CLI', 'Cloudflare Turnstile',
-      'Cloudflare Workers', 
-      'Cloudflare R2 Storage',
-      'Cloudflare AI Workers',
-      'Cloudflare AI Gateway',
+      'Application Development', 'TypeScript',
+      'AI Image Generation', 'NextJS', 'Image Compression',
+      'SAAS Development', 'Wrangler CLI',
+      'Cloudflare Turnstile', 'GIT CI', 'Cloudflare Workers',
+      'Claude Code', 'Cloudflare R2 Storage',
+      'Cloudflare AI Workers', 'Cloudflare AI Gateway',
     ],
     imageUrls: [
       img('ai-gen-1.png'),
@@ -144,19 +133,13 @@ export const projects: Project[] = [
     title: 'Without Rulers Apparel',
     description:
       'Founded and built an independent direct-to-consumer and B2b apparel brand from concept through launch — identity system, e-commerce platform, payment integration, SEO, and editorial product photography. Designed an editorial storefront optimized for mobile checkout and responsive product storytelling, with a fully integrated print and digital brand system.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Cloudflare Workers',
-      'Brand Identity',
-      'E-Commerce + Fulfillment',
-      'AI Development',
-      'Payment Integrations',
-      'Product Development',
-      'Art Direction',
-      'Shopify',
-      'Adobe Creative Cloud',
-      'Custom Package Design',
-      'Kittl',
-      'MidJourney',
+      'Cloudflare Workers', 'Brand Identity',
+      'Payment Integrations', 'Art Direction',
+      'AI Development', 'Product Development', 'Shopify',
+      'E-Commerce + Fulfillment', 'Adobe Creative Cloud',
+      'MidJourney', 'Custom Package Design', 'Kittl',
     ],
     imageUrls: [
       img('projects-wor-2.png'),
@@ -172,15 +155,12 @@ export const projects: Project[] = [
     title: 'Bulk Product Image Creator',
     description:
       'Layer images together for templated, bulk or individual export of configurable product photos.  Client-side processing ensures privacy and instant results. Automatic compression, scaling, and centering of assets on upload with options for individual modification.  Multiple output formats with option for bulk grayscale export variation.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Application Development',
-      'Image Optimization',
-      'Image Compression',
-      'CDN Content Development',
-      'Solutions Engineering',
-      'NextJS', 'Claude Code',
-      'Wrangler CLI', 'GIT CI',
-      'Cloudflare Workers','TypeScript',
+      'Application Development', 'CDN Content Development',
+      'NextJS', 'Image Optimization', 'Claude Code',
+      'Solutions Engineering', 'GIT CI', 'Image Compression',
+      'Wrangler CLI', 'Cloudflare Workers', 'TypeScript',
     ],
     imageUrls: [
       img('projects-gen-4.png'),
@@ -196,17 +176,12 @@ export const projects: Project[] = [
     title: 'ADA Compliance Scanner',
     description:
       'Scans a single page against WCAG 2.1 Level AA — the technical standard adopted by the DOJs Title II web rule (28 CFR Part 35, Subpart H) — and produces a report written for developers, compliance staff and administrators at the same time, with detail on how to fix non-compliant content.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'ADA/WCAG Accessibility Testing',
-      'TypeScript',
-      'Application Development',
-      'NextJS', 'Hono',
-      'Cloudflare D1',
-      'Cloudflare Workers',
-      'Cloudflare Turnstile',
-      'Rate Limiting',
-      'Cloudflare Wrangler CLI',
-      'Tailwind CSS',
+      'Application Development', 'NextJS', 'TypeScript',
+      'Cloudflare Turnstile', 'Cloudflare D1', 'Tailwind CSS',
+      'ADA/WCAG Accessibility Testing', 'Cloudflare Workers',
+      'Rate Limiting', 'Hono', 'Cloudflare Wrangler CLI',
     ],
     imageUrls: [
       img('projects-ada-4.png'),
@@ -222,18 +197,12 @@ export const projects: Project[] = [
     title: 'Rumble King',
     description:
       'Full brand identity refresh and digital presence for Rumble King, a popular Southern California band. Designed the wordmark, type system, and high-contrast visual language carried across web, print, and merchandise. Advisory for marketing, e-commerce and SASS integration, fulfillment, to support brand expansion.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Premium Apparel Rebrand',
-      'Brand Identity',
-      'Typography',
-      'Web Design',
-      'Web Development',
-      'Print Design',
-      'Adobe Creative Cloud',
-      'MidJourney',
-      'Figma',
-      'CMS Integration',
-      'Ecommerce Fulfillment',
+      'Premium Apparel Rebrand', 'Typography',
+      'Brand Identity', 'Adobe Creative Cloud', 'MidJourney',
+      'Web Development', 'CMS Integration', 'Web Design',
+      'Figma', 'Print Design', 'Ecommerce Fulfillment',
     ],
     imageUrls: [
       img('projects-rk-1.png'),
@@ -249,18 +218,13 @@ export const projects: Project[] = [
     title: 'Varnish Software',
     description:
       'Served as technical advisor for enterprise customers evaluating and implementing Varnish Cache. Consulted on caching architectures across bare metal and AWS VPC environments, optimizing cache hit ratios and reducing origin load by up to 85%. Built customer education programs translating complex caching concepts into actionable implementation plans, and contributed performance insights back to the product roadmap.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Varnish Cache Configuration',
-      'Edge Computing',
-      'Bare METAL VPCS',
-      'Web Performance',
-      'Caching Strategy',
-      'Solutions Engineering',
-      'Customer Success',
-      'Pre-Sales',
-      'POST-Sales',
-      'Technical Documentation',
-      'Caching Strategies',
+      'Varnish Cache Configuration', 'Bare METAL VPCS',
+      'Web Performance', 'Edge Computing',
+      'Caching Strategy', 'Technical Documentation',
+      'Pre-Sales', 'Solutions Engineering', 'POST-Sales',
+      'Customer Success', 'Caching Strategies',
     ],
     imageUrls: [
       img('projects-varnish-1.png'),
@@ -276,18 +240,12 @@ export const projects: Project[] = [
     title: 'Evrlink',
     description:
       'Managed cross-functional coordination between US design teams and offshore development for an MVP launch across mobile and desktop. Wrote UX specifications and product requirements, then built the frontend MVP including performance-optimized JavaScript animations and responsive design patterns. Established agile sprint planning frameworks and project management best practices',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Project Management',
-      'Frontend Development',
-      'JavaScript',
-      'Responsive Design',
-      'Wireframing',
-      'Agile / Scrum',
-      'Cross-Functional',
-      'UX',
-      'Mobile + Desktop',
-      'MVP Delivery',
-      'Animation',
+      'Frontend Development', 'JavaScript',
+      'Project Management', 'Wireframing', 'Agile / Scrum',
+      'Responsive Design', 'Cross-Functional',
+      'MVP Delivery', 'UX', 'Mobile + Desktop', 'Animation',
     ],
     imageUrls: [
       img('projects-evr-1.png'),
@@ -303,23 +261,14 @@ export const projects: Project[] = [
     title: 'Akamai',
     description:
       'Led post-sales implementation and ongoing customer success for West Coast financial services and e-commerce clients. Pioneered Akamai\'s first CLI-managed configurations for Fortune 500 banks, orchestrated zero-downtime infrastructure migrations across hybrid cloud environments, and ran IPv6 + HTTP/2 rollouts. Spearheaded the beta implementation of Bot Manager and tuned WAF rules for high-availability requirements.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Technical Project Management',
-      'Akamai CDN',
-      'Bot Management',
-      'WAF Tuning',
-      'HTTP/2',
-      'IPv6',
-      'Log Analysis',
-      'DDOS MITIGATION',
-      'CDN Architecture',
-      'Financial Services',
-      'E-commerce Sites',
-      'RUM',
-      'Customer onboarding',
-      'Performance Optimization',
-      'Customer Success',
-      'Caching Strategies',
+      'Technical Project Management', 'Bot Management',
+      'Akamai CDN', 'HTTP/2', 'IPv6', 'CDN Architecture',
+      'Log Analysis', 'Financial Services', 'WAF Tuning',
+      'Customer onboarding', 'DDOS MITIGATION',
+      'E-commerce Sites', 'RUM', 'Performance Optimization',
+      'Customer Success', 'Caching Strategies',
     ],
     imageUrls: [
       img('projects-akamai-1.png'),
@@ -335,20 +284,13 @@ export const projects: Project[] = [
     title: 'Accenture',
     description:
       'Managed onshore/offshore frontend development teams of 8–12 engineers delivering CMS integration projects on Adobe Experience Manager, Hybris, and Demandware for enterprise clients. Led client-facing release reviews, coordinated deployment planning across complex environments, and implemented agile methodologies across cross-functional teams spanning PMO, UX, BI, and backend stakeholders.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Adobe Experience Manager',
-      'Hybris',
-      'Demandware',
-      'Frontend Development',
-      'Team Management',
-      'Agile / Scrum',
-      'Forward Deployed Development',
-      'CMS Integrations',
-      
-      'Enterprise Consulting',
-      'JavaScript',
-      'Mentorship',
-      'Website Migrations',
+      'Forward Deployed Development', 'Hybris',
+      'Team Management', 'CMS Integrations', 'JavaScript',
+      'Adobe Experience Manager', 'Demandware',
+      'Frontend Development', 'Website Migrations',
+      'Agile / Scrum', 'Enterprise Consulting', 'Mentorship',
     ],
     imageUrls: [
       img('projects-accenture-3.png'),
@@ -364,20 +306,13 @@ export const projects: Project[] = [
     title: 'Capital Group / American Funds',
     description:
       'Forward Deployed manager of frontend development team for large architecture and Adode Experience Manager Migration. Led client-facing release reviews, coordinated deployment planning across complex environments, and implemented agile methodologies across cross-functional teams spanning PMO, UX, BI, and backend stakeholders.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Adobe Experience Manager',
-      'CMS Integration',
-      'Frontend Development',
-      
-      'Team Management',
-      'Agile / Scrum',
-      'CI/CD Deployemnts',
-      'Adobe Suite',
-      'Architecture',
-      'Forward Deployed Developer',
-      'QA',
-      'A/B testing',
-      'analytics',
+      'Adobe Experience Manager', 'Frontend Development',
+      'Agile / Scrum', 'CMS Integration', 'Team Management',
+      'Architecture', 'CI/CD Deployemnts', 'Adobe Suite',
+      'A/B testing', 'analytics',
+      'Forward Deployed Developer', 'QA',
     ],
     imageUrls: [
       img('projects-capgroup-1.png'),
@@ -393,21 +328,13 @@ export const projects: Project[] = [
     title: 'Nissan & Infiniti USA Websites',
     description:
       'Led maintenance, re-architecture, and weekly deployment cycles for nissanusa.com and infinitiusa.com — two of the highest-traffic automotive web properties in the US. Managed CI/CD planning and migrations across distributed on/offshore development resources and executed enterprise-scale Adobe Experience Manager migrations for both brands.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Adobe Experience Manager',
-      'Team Management',
-      'Frontend Development',
-      'CI/CD',
-      'JavaScript',
-      'Enterprise Migration',
-      'Automotive Marketing',
-      'animation',
-      'Flash Development',
-      'SEO',
-      'New Vehicle Microsites',
-      'Adobe Suite',
-      'QA',
-      
+      'Adobe Experience Manager', 'CI/CD', 'JavaScript',
+      'Frontend Development', 'Enterprise Migration',
+      'animation', 'Automotive Marketing', 'Adobe Suite',
+      'Team Management', 'Flash Development', 'SEO',
+      'New Vehicle Microsites', 'QA',
     ],
     imageUrls: [
       img('projects-nissan-1.png'),
@@ -423,17 +350,12 @@ export const projects: Project[] = [
     title: 'David Lynch',
     description:
       'Architected and developed web properties for filmmaker David Lynch, including interactive Flash experiences, an e-commerce storefront, and a subscription-based member platform that pioneered direct-to-fan content distribution. Managed DNS infrastructure and Apple Xserve web servers to keep media-rich content online for a global audience.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Lead Developer',
-      'Flash Development',
-      'E-Commerce',
-      'Web-based games',
-      'Subscription Platform',
-      'DNS and Web Server maintenance',
-      'Video Editing',
-      'Member Portal',
-      'Production Art',
-      'Media Delivery',
+      'Flash Development', 'E-Commerce', 'Lead Developer',
+      'Web-based games', 'DNS and Web Server maintenance',
+      'Subscription Platform', 'Video Editing',
+      'Member Portal', 'Production Art', 'Media Delivery',
       'Database Management',
     ],
     imageUrls: [
@@ -451,17 +373,12 @@ export const projects: Project[] = [
     title: 'Greg Gorman Photography',
     description:
       'Developed the portfolio site for celebrity photographer Greg Gorman — a quietly minimal showcase for decades of iconic black-and-white portraiture. Focused on large-format imagery, restrained typography, and a CMS workflow that let his studio update galleries without engineering involvement.',
+    // Ordered so each row fills the tag column evenly at desktop width.
     tags: [
-      'Web Design',
-      'Web Development',
-      'Portfolio',
-      'Photography',
-      'CMS Integration',
-      'Editorial Design',
-      'Frontend Development',
-      'JavaScript',
-      'Responsive Design',
-      'Studio Workflow',
+      'Web Design', 'Web Development', 'Photography',
+      'CMS Integration', 'Portfolio',
+      'Frontend Development', 'Editorial Design',
+      'Studio Workflow', 'JavaScript', 'Responsive Design',
     ],
     imageUrls: [
       img('projects-gorman-1.png'),
