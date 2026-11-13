@@ -32,7 +32,7 @@ export const projects: Project[] = [
       img('projects-rally-payments.png'),
       img('projects-rally-reports.png'),
     ],
-    projectLinkLabel: 'In Development',
+    projectUrl: 'https://rallybook.club/',
     year: 'Business Application + Full-Stack Development + Design + CDN Integration',
   },
   {
@@ -50,7 +50,7 @@ export const projects: Project[] = [
       'Automation', 'Cloudflare Workers', 'Wrangler CLI',
     ],
     imageUrls: [
-      img('projects-ooga-1.png'),
+      img('projects-ooga-video.mp4'),
       img('projects-ooga-2.png'),
       img('projects-ooga-3.png'),
       img('projects-ooga-4.png'),
